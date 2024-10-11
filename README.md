@@ -78,11 +78,11 @@ Pre nových členov tímu, ktorí ešte nemajú skúsenosti so správou Kubernet
 4. **Podpora pri plánovaní a škálovaní infraštruktúry**
    Organizácie, ktoré neustále rastú a škálujú svoje Kubernetes klastre, môžu využívať KubeGlimpse na vizualizáciu budúcich zmien v infraštruktúre. Používanie vizualizácie pri plánovaní rozšírení pomáha pri optimalizácii zdrojov a zabraňuje vzniku preťažených alebo neefektívne využívaných nodov.
 
-### **Trhové príležitosti a finančný potenciál**
+## **Trhové príležitosti a finančný potenciál**
 
 Podľa najnovších analýz bol trh s Kubernetes v roku 2019 ocenený na **1,46 miliardy USD**, pričom sa očakáva, že do roku 2031 dosiahne hodnotu **9,69 miliardy USD** s ročným rastom (CAGR) **23,4 %** v období rokov 2024 – 2031. Kubernetes je najrýchlejšie rastúcim projektom v histórii open-source softvéru po Linuxe, a jeho adopcia sa stáva štandardom pre správu kontajnerizovaných aplikácií.
 
-Firmy investujú do Kubernetes technológií kvôli:
+### **Firmy investujú do Kubernetes technológií kvôli:**
 
 <ul>
   <li><b>Automatizácii:</b> Kubernetes umožňuje automatickú správu a škálovanie prostredí.</li>
@@ -93,7 +93,9 @@ Firmy investujú do Kubernetes technológií kvôli:
 
 Rast Kubernetes trhu je poháňaný jeho širokým využitím v IT a telekomunikáciách, zdravotníctve, financiách a ďalších odvetviach. Najväčší trhový podiel má momentálne **Severná Amerika**, ale najrýchlejšie rastúcim regiónom je **Ázia-Pacifik**, kde je vysoký dopyt po modernizácii IT infraštruktúr.
 
-**Rast Kubernetes trhu podľa regiónov (v miliardách USD)**
+![Zobrazenie trhu cloudoveho marketu](assets/app-cont-market-trends.png)
+
+### **Rast Kubernetes trhu podľa regiónov (v miliardách USD)**
 
 | **Rok** | **Severná Amerika** | **Ázia-Pacifik** | **Európa** | **Latinská Amerika** | **Blízky východ a Afrika** |
 |---------|---------------------|------------------|------------|---------------------|---------------------------|
@@ -105,6 +107,9 @@ Rast Kubernetes trhu je poháňaný jeho širokým využitím v IT a telekomunik
 | 2028    | 1.45                | 1.36             | 1.27       | 1.18                | 1.09                      |
 | 2029    | 1.78                | 1.67             | 1.57       | 1.47                | 1.36                      |
 | 2030    | 2.18                | 2.06             | 1.94       | 1.82                | 1.70                      |
+
+
+![Zobrazenie ocakavanie rastu trhu cloudoveho marketu](assets/app-cont-market.png)
 
 **KubeGlimpse** má potenciál stať sa kľúčovým hráčom na tomto trhu tým, že rieši existujúci problém s vizualizáciou zložitých infraštruktúr. Vizualizačné nástroje pre Kubernetes klastre sú nevyhnutné pre udržanie vysokej úrovne výkonu a spoľahlivosti systémov, čo zvyšuje dopyt po takýchto riešeniach. **KubeGlimpse** je schopný uspokojiť potreby malých startupov, ako aj veľkých korporácií spravujúcich tisíce nodov a podov.
 
