@@ -9,25 +9,28 @@
 
 1. **Získavanie dát z Kubernetes API**  
    Aplikácia napísaná v **Pythone** pravidelne pristupuje k **Kubernetes API** a získava všetky potrebné informácie o klastroch. Tieto dáta obsahujú:
-   - **Nody** (servery, ktoré hostia pody),
-   - **Pody** (skupiny kontajnerov),
-   - **Služby** (abstrakcie pre komunikáciu medzi podmi),
-   - **Namespaces** (logické oddelenia klastrov pre rôzne tímy),
-   - **Konfiguračné a tajné údaje**.
 
-2. **Ukladanie dát do Neo4j**  
+
+   <ul>
+  <li><b>Nody:</b> Fyzické alebo virtuálne servery, ktoré hostia **pody**. Nody sú základnými stavebnými jednotkami Kubernetes klastrov a poskytujú výpočtový výkon, na ktorom aplikácie bežia.</li>
+  <li>Najmenšie a najzákladnejšie vykonávateľné jednotky v Kubernetes. Pody predstavujú zoskupenie jedného alebo viacerých kontajnerov, ktoré bežia spolu a zdieľajú rovnaké zdroje (napr. sieť a úložisko).</li>
+  <li>**Služby (Services)**: Abstrakcia, ktorá definuje, ako aplikácie (pody) komunikujú s inými aplikáciami alebo klientmi. Služby umožňujú trvalý prístup k podom, aj keď sa ich IP adresy dynamicky menia.</li>
+  <li>**Namespaces**: Logické oddelenia v Kubernetes, ktoré umožňujú rozdelenie klastrov na izolované časti. Používajú sa na organizovanie a správu rôznych projektov, tímov alebo prostredí v rámci toho istého klastra.</li>
+</ul>e
+
+1. **Ukladanie dát do Neo4j**  
    Po zozbieraní sa dáta ukladajú do **Neo4j**, grafovej databázy optimalizovanej na modelovanie a spracovanie vzťahov medzi jednotlivými objektmi v Kubernetes klastroch. Neo4j databáza umožňuje efektívne dotazovanie a manipuláciu s dátami, ktoré reprezentujú vzťahy medzi podmi, nodmi, službami a ďalšími komponentmi klastra.
 
-3. **Transformácia dát do JSON**  
+2. **Transformácia dát do JSON**  
    Zozbierané dáta sú transformované do **JSON formátu**, ktorý slúži ako podklad pre vizualizáciu. Tento formát je ideálny pre rýchle načítanie a manipuláciu v 3D grafickom prostredí.
 
-4. **3D Vizualizácia pomocou Three.js (Forced Graph)**  
+3. **3D Vizualizácia pomocou Three.js (Forced Graph)**  
    Vizualizácia v **Three.js** využíva 3D **forced graph** na zobrazenie vzťahov medzi komponentmi. Tento typ grafu simuluje fyzikálne interakcie medzi objektmi, čím sa dynamicky zobrazuje štruktúra klastra. Uzly reprezentujú jednotlivé komponenty (nody, pody, služby), zatiaľ čo hrany zobrazujú vzťahy medzi nimi (napr. ktorý pod beží na ktorom node).
 
-5. **Interaktívne funkcie vizualizácie**  
+4. **Interaktívne funkcie vizualizácie**  
    Používatelia môžu s 3D modelom klastra interagovať, približovať ho, otáčať a klikať na jednotlivé uzly, aby zobrazili podrobnosti o danom komponente (napr. stav podu, alokované zdroje, metadáta). Táto funkcia umožňuje detailnú analýzu klastrov a rýchlu identifikáciu problémov alebo nezrovnalostí.
 
-6. **Škáľovateľnosť a výkonnosť**  
+5. **Škáľovateľnosť a výkonnosť**  
    KubeGlimpse je optimalizovaný tak, aby zvládal vizualizáciu malých aj veľkých klastrov. Vďaka efektívnej práci s dátami v Neo4j a používaniu Three.js pre vykresľovanie 3D grafov môže aplikácia plynule fungovať aj pri komplexných infraštruktúrach.
 
 
