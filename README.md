@@ -59,6 +59,8 @@ Pri aktualizáciách alebo zmenách v konfigurácii Kubernetes klastrov je čast
 Pre nových členov tímu, ktorí ešte nemajú skúsenosti so správou Kubernetes klastrov, môže byť pochopenie infraštruktúry náročné. KubeGlimpse poskytuje vizuálny nástroj, ktorý uľahčuje orientáciu v štruktúre klastra a pomáha im rýchlejšie sa zorientovať a pochopiť fungovanie jednotlivých komponentov a ich vzťahov.
 
 
+![Zobrazenie Usecase diagramu pre KubeGlimpse](assets/usecase.png)
+
 
 
 ### How do I get set up? ###
