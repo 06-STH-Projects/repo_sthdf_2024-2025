@@ -43,6 +43,8 @@ Existujúce vizualizačné nástroje pre Kubernetes klastre sú často nepresné
 
 ## **3. Prípady použitia**
 
+![Zobrazenie Usecase diagramu pre KubeGlimpse](assets/usecase.png)
+
 ### **1. Porozumenie štruktúre Kubernetesu**
 Pre správu veľkých Kubernetes klastrov je kľúčové mať jasný prehľad o tom, ako jednotlivé komponenty (nody, pody, služby) spolu interagujú. KubeGlimpse poskytuje interaktívnu 3D vizualizáciu, ktorá umožňuje správcovi lepšie pochopiť vzťahy medzi komponentmi a rýchlo identifikovať neefektívne usporiadanie alebo nezrovnalosti v štruktúre klastra.
 
@@ -58,27 +60,51 @@ Pri aktualizáciách alebo zmenách v konfigurácii Kubernetes klastrov je čast
 ### **5. Lepšia orientácia pre nových členov tímu**
 Pre nových členov tímu, ktorí ešte nemajú skúsenosti so správou Kubernetes klastrov, môže byť pochopenie infraštruktúry náročné. KubeGlimpse poskytuje vizuálny nástroj, ktorý uľahčuje orientáciu v štruktúre klastra a pomáha im rýchlejšie sa zorientovať a pochopiť fungovanie jednotlivých komponentov a ich vzťahov.
 
+## **4. Biznis pohľad KubeGlimpse**
 
-![Zobrazenie Usecase diagramu pre KubeGlimpse](assets/usecase.png)
+**KubeGlimpse** ponúka jedinečný spôsob vizualizácie Kubernetes klastrov, čo prináša jasné výhody nielen pre technických odborníkov, ale aj pre manažérske a biznisové tímy. Zatiaľ čo tradičné nástroje na správu infraštruktúry poskytujú prevažne textové výstupy, KubeGlimpse umožňuje prístup k vizualizáciám, ktoré sú ľahko pochopiteľné a umožňujú efektívnejšiu komunikáciu naprieč rôznymi tímami.
 
+### **Použitie KubeGlimpse v praxi:**
 
+1. **Podpora rozhodovania v IT oddeleniach**
+   Pre manažérov a vedúcich IT oddelení je kľúčové mať prehľad o infraštruktúre, na ktorej závisí prevádzka aplikácií a služieb. KubeGlimpse poskytuje jednoduchý a prehľadný pohľad na celý Kubernetes klaster, čím umožňuje rýchlo zhodnotiť stav infraštruktúry a efektívnosť jej využívania. Vizualizácia môže slúžiť ako podklad pre rozhodovanie o škálovaní, nasadzovaní nových služieb alebo optimalizácii infraštruktúry.
 
-### How do I get set up? ###
+2. **Zlepšenie medziodborovej komunikácie**
+   Pre tímy mimo IT oddelení, ako sú produktoví manažéri, marketingové tímy či projektoví vedúci, môže byť zložité pochopiť technické detaily Kubernetes klastrov. KubeGlimpse umožňuje ne-technickým tímom rýchlo pochopiť štruktúru systému, čo podporuje lepšiu koordináciu medzi technickými a obchodnými jednotkami v organizácii. Tento nástroj pomáha aj pri vytváraní prezentácií, ktoré môžu zlepšiť porozumenie medzi rôznymi oddeleniami.
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
+3. **Nasadzovanie v DevOps a SRE prostredí**
+   DevOps tímy a SRE (Site Reliability Engineering) zvyčajne spravujú rozsiahle klastre, kde je neustála potreba vizuálne sledovať vzťahy medzi komponentmi a ich stav. KubeGlimpse môže byť kľúčovým nástrojom pri analýze výkonnosti, sledovaní preťaženia nodov alebo pri vizualizácii zmien v infraštruktúre počas nasadzovania nových verzií aplikácií.
 
-### Contribution guidelines ###
+4. **Podpora pri plánovaní a škálovaní infraštruktúry**
+   Organizácie, ktoré neustále rastú a škálujú svoje Kubernetes klastre, môžu využívať KubeGlimpse na vizualizáciu budúcich zmien v infraštruktúre. Používanie vizualizácie pri plánovaní rozšírení pomáha pri optimalizácii zdrojov a zabraňuje vzniku preťažených alebo neefektívne využívaných nodov.
 
-* Writing tests
-* Code review
-* Other guidelines
+### **Trhové príležitosti a finančný potenciál**
 
-### Who do I talk to? ###
+Podľa najnovších analýz bol trh s Kubernetes v roku 2019 ocenený na **1,46 miliardy USD**, pričom sa očakáva, že do roku 2031 dosiahne hodnotu **9,69 miliardy USD** s ročným rastom (CAGR) **23,4 %** v období rokov 2024 – 2031. Kubernetes je najrýchlejšie rastúcim projektom v histórii open-source softvéru po Linuxe, a jeho adopcia sa stáva štandardom pre správu kontajnerizovaných aplikácií.
 
-* Repo owner or admin
-* Other community or team contact
+Firmy investujú do Kubernetes technológií kvôli:
+
+<ul>
+  <li><b>Automatizácii:</b> Kubernetes umožňuje automatickú správu a škálovanie prostredí.</li>
+  <li><b>Efektivite:</b> Znižovanie prevádzkových nákladov a optimalizácia využívania zdrojov.</li>
+  <li><b>Multicloud a hybridné možnosti:</b> Kubernetes umožňuje nasadenie v multicloudových a hybridných prostrediach, čo firmám poskytuje väčšiu flexibilitu.</li>
+  <li><b>Zlepšenej produktivite vývojárov:</b> Vďaka jednoduchšiemu nasadzovaniu aplikácií a lepšej správe infraštruktúry.</li>
+</ul>
+
+Rast Kubernetes trhu je poháňaný jeho širokým využitím v IT a telekomunikáciách, zdravotníctve, financiách a ďalších odvetviach. Najväčší trhový podiel má momentálne **Severná Amerika**, ale najrýchlejšie rastúcim regiónom je **Ázia-Pacifik**, kde je vysoký dopyt po modernizácii IT infraštruktúr.
+
+**Rast Kubernetes trhu podľa regiónov (v miliardách USD)**
+
+| **Rok** | **Severná Amerika** | **Ázia-Pacifik** | **Európa** | **Latinská Amerika** | **Blízky východ a Afrika** |
+|---------|---------------------|------------------|------------|---------------------|---------------------------|
+| 2023    | 0.54                | 0.49             | 0.44       | 0.40                | 0.35                      |
+| 2024    | 0.66                | 0.60             | 0.55       | 0.49                | 0.44                      |
+| 2025    | 0.80                | 0.74             | 0.68       | 0.62                | 0.55                      |
+| 2026    | 0.97                | 0.91             | 0.84       | 0.77                | 0.70                      |
+| 2027    | 1.19                | 1.11             | 1.03       | 0.95                | 0.87                      |
+| 2028    | 1.45                | 1.36             | 1.27       | 1.18                | 1.09                      |
+| 2029    | 1.78                | 1.67             | 1.57       | 1.47                | 1.36                      |
+| 2030    | 2.18                | 2.06             | 1.94       | 1.82                | 1.70                      |
+
+**KubeGlimpse** má potenciál stať sa kľúčovým hráčom na tomto trhu tým, že rieši existujúci problém s vizualizáciou zložitých infraštruktúr. Vizualizačné nástroje pre Kubernetes klastre sú nevyhnutné pre udržanie vysokej úrovne výkonu a spoľahlivosti systémov, čo zvyšuje dopyt po takýchto riešeniach. **KubeGlimpse** je schopný uspokojiť potreby malých startupov, ako aj veľkých korporácií spravujúcich tisíce nodov a podov.
+
