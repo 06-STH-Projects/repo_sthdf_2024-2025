@@ -116,6 +116,8 @@ Rast Kubernetes trhu je poháňaný jeho širokým využitím v IT a telekomunik
 
 ## **5. Technologická vrstva**
 
+V tejto sekcii sa pozrieme na technológie, ktoré boli použité pri vývoji KubeGlimpse, a rozdelíme ich na dve časti: **teoretickú** a **praktickú**. Najskôr si vysvetlíme jednotlivé komponenty, z ktorých sa projekt skladá, a prečo sme sa rozhodli použiť práve tieto technológie. V praktickej časti následne uvedieme konkrétne príklady toho, ako boli tieto technológie implementované v našom kóde, aby bolo jasné, ako celý systém funguje.
+
 ### **5.1 Teoretický pohľad na použité technológie**
 
 **Frontend: Three.js**
@@ -129,38 +131,93 @@ Three.js je JavaScriptová knižnica na tvorbu 3D grafiky v prehliadači, ktorá
 <li><b>Interaktívnosť:</b> Knižnica podporuje interakciu používateľov s modelmi (napr. zoom, otáčanie, klikanie na objekty).</li>
 <li><b>Rendering a fyzika:</b> Poskytuje pokročilé renderovacie techniky a podporu pre fyzikálne simulácie, ako napríklad svetlo, tieňovanie a textúrovanie objektov.</li></ul>
 
-Príklad základnej scény s 3D objektom:
+Príklad základnej scény s 3D objektami:
+
+![Základna scéna s 3D objektami](assets/three-js.mov)
+
 
 ```
-// Vytvorenie scény
-const scene = new THREE.Scene();
+import * as THREE from 'three'
 
-// Vytvorenie kamery
-const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-
-// Vytvorenie renderera
-const renderer = new THREE.WebGLRenderer();
-renderer.setSize(window.innerWidth, window.innerHeight);
-document.body.appendChild(renderer.domElement);
-
-// Vytvorenie objektu (kocky)
-const geometry = new THREE.BoxGeometry();
-const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
-const cube = new THREE.Mesh(geometry, material);
-scene.add(cube);
-
-// Nastavenie kamery
-camera.position.z = 5;
-
-// Animácia scény
-function animate() {
-    requestAnimationFrame(animate);
-    cube.rotation.x += 0.01;
-    cube.rotation.y += 0.01;
-    renderer.render(scene, camera);
-}
+var camera, scene, renderer, stats;
+var geometry, group;
+var mouseX = 0,
+  mouseY = 0;
+var windowHalfX = window.innerWidth / 2;
+var windowHalfY = window.innerHeight / 2;
+init();
 animate();
+
+function init() {
+  camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 1, 10000);
+  camera.position.z = 500;
+  scene = new THREE.Scene();
+  scene.background = new THREE.Color(0x2b2b2b);
+  scene.fog = new THREE.Fog(0x2b2b2b, 1, 10000);
+  var geometry = new THREE.BoxBufferGeometry(100, 100, 100);
+  var material = new THREE.MeshNormalMaterial();
+  group = new THREE.Group();
+  for (var i = 0; i < 500; i++) {
+    var mesh = new THREE.Mesh(geometry, material);
+    mesh.position.x = Math.random() * 2000 - 1000;
+    mesh.position.y = Math.random() * 2000 - 1000;
+    mesh.position.z = Math.random() * 2000 - 1000;
+    mesh.rotation.x = Math.random() * 2 * Math.PI;
+    mesh.rotation.y = Math.random() * 2 * Math.PI;
+    mesh.matrixAutoUpdate = false;
+    mesh.updateMatrix();
+    group.add(mesh);
+  }
+
+  scene.add(group);
+  renderer = new THREE.WebGLRenderer({ antialias: false });
+  renderer.setPixelRatio(window.devicePixelRatio);
+  renderer.setSize(window.innerWidth, window.innerHeight);
+  document.body.appendChild(renderer.domElement);
+
+
+  document.addEventListener('mousemove', onDocumentMouseMove, false);
+  window.addEventListener('resize', onWindowResize, false);
+}
+
+function onWindowResize() {
+  windowHalfX = window.innerWidth / 2;
+  windowHalfY = window.innerHeight / 2;
+  camera.aspect = window.innerWidth / window.innerHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(window.innerWidth, window.innerHeight);
+}
+
+function onDocumentMouseMove(event) {
+  mouseX = (event.clientX - windowHalfX) * 10;
+  mouseY = (event.clientY - windowHalfY) * 10;
+}
+
+function animate() {
+  requestAnimationFrame(animate);
+  render();
+}
+
+function render() {
+  var time = Date.now() * 0.001;
+  var rx = Math.sin(time * 0.7) * 0.5,
+    ry = Math.sin(time * 0.3) * 0.5,
+    rz = Math.sin(time * 0.2) * 0.5;
+  camera.position.x += (mouseX - camera.position.x) * 0.05;
+  camera.position.y += (-mouseY - camera.position.y) * 0.05;
+  camera.lookAt(scene.position);
+  group.rotation.x = rx;
+  group.rotation.y = ry;
+  group.rotation.z = rz;
+  renderer.render(scene, camera);
+}
 ```
+
+
+Backend: Python a Kubernetes API
+Backend KubeGlimpse je napísaný v Pythone a používa Kubernetes API na získavanie aktuálnych informácií o klastroch. Python je obľúbený kvôli svojej jednoduchosti a bohatému ekosystému knižníc, ktoré uľahčujú prácu s API a databázami.
+
+
 
 
 
