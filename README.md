@@ -133,7 +133,7 @@ Three.js je JavaScriptová knižnica na tvorbu 3D grafiky v prehliadači, ktorá
 
 Príklad základnej scény s 3D objektami:
 
-[![Základna scéna v Threejs spolu s objektami]()](https://youtu.be/8r4LcAXUNDY)
+[![Základna scéna v Threejs spolu s objektami](https://img.youtube.com/vi/8r4LcAXUNDY/0.jpg)](https://youtu.be/8r4LcAXUNDY)
 
 
 
