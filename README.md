@@ -131,9 +131,9 @@ Three.js je JavaScriptová knižnica na tvorbu 3D grafiky v prehliadači, ktorá
 <li><b>Interaktívnosť:</b> Knižnica podporuje interakciu používateľov s modelmi (napr. zoom, otáčanie, klikanie na objekty).</li>
 <li><b>Rendering a fyzika:</b> Poskytuje pokročilé renderovacie techniky a podporu pre fyzikálne simulácie, ako napríklad svetlo, tieňovanie a textúrovanie objektov.</li></ul>
 
-Príklad základnej scény s 3D objektami:
+**Príklad základnej scény s 3D objektami:**
 
-[Základna scéna v Threejs spolu s objektami](https://youtu.be/8r4LcAXUNDY)
+[Video ako táto základna scéna vyzerá](https://youtu.be/8r4LcAXUNDY)
 
 ```
 import * as THREE from 'three'
@@ -213,8 +213,23 @@ function render() {
 ```
 
 
-Backend: Python a Kubernetes API
-Backend KubeGlimpse je napísaný v Pythone a používa Kubernetes API na získavanie aktuálnych informácií o klastroch. Python je obľúbený kvôli svojej jednoduchosti a bohatému ekosystému knižníc, ktoré uľahčujú prácu s API a databázami.
+**Backend: Python a Kubernetes API**
+
+Backend KubeGlimpse je naprogramovaný v jazyku Python a používa Kubernetes API na získavanie aktuálnych informácií o klastroch. Python je obľúbený hlavne kvôli svojej jednoduchosti a bohatému ekosystému knižníc, ktoré uľahčujú prácu s API a databázami.
+
+<ul> 
+<li><b>Získavanie dát:</b> Pythonové skripty komunikujú s Kubernetes API a zhromažďujú informácie o nodoch, podoch, službách a iných objektoch v klastri.</li>
+<li><b>Spracovanie dát:</b> Dáta sa spracovávajú a transformujú do podoby, ktorá sa dá následne uložiť do databázy Neo4j a vizualizovať na frontende.</li> 
+<li><b>Automatizácia:</b> Python je tiež využívaný na automatické úlohy, ako je pravidelná aktualizácia dát alebo zisťovanie stavu klastra.</li> </ul>
+
+**Databáza: Neo4j**
+
+Neo4j je grafová databáza, ktorá umožňuje efektívne spravovať dáta a vzťahy medzi nimi v rámci Kubernetes klastrov. Je ideálna pre modelovanie zložitých štruktúr, ako sú klastre, pretože umožňuje efektívne dotazovanie a vizualizáciu vzťahov.
+
+<ul>
+<li><b>Ukladanie vzťahov:</b> Neo4j ukladá nody, pody a služby ako uzly, a vzťahy medzi nimi ako hrany, čím umožňuje modelovať zložité prepojenia v Kubernetes.</li> 
+<li><b>Rýchle dotazovanie:</b> Databáza umožňuje efektívne vyhľadávať a získavať informácie o vzťahoch medzi rôznymi komponentmi klastra.</li> </ul>
+
 
 
 
