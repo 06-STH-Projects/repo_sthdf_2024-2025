@@ -113,3 +113,57 @@ Rast Kubernetes trhu je poháňaný jeho širokým využitím v IT a telekomunik
 
 **KubeGlimpse** má potenciál stať sa zaujímavým pre tento trh tým, že rieši existujúci problém s vizualizáciou zložitých infraštruktúr. Vizualizačné nástroje pre Kubernetes klastre sú nevyhnutné pre udržanie vysokej úrovne výkonu a spoľahlivosti systémov, čo zvyšuje dopyt po takýchto riešeniach. **KubeGlimpse** je schopný uspokojiť potreby malých startupov, ako aj veľkých korporácií spravujúcich tisíce nodov a podov.
 
+
+## **5. Technologická vrstva**
+
+### **5.1 Teoretický pohľad na použité technológie**
+
+**Frontend: Three.js**
+
+Three.js je JavaScriptová knižnica na tvorbu 3D grafiky v prehliadači, ktorá používa WebGL. Poskytuje robustný súbor nástrojov na vytváranie interaktívnych 3D modelov a animácií, ktoré môžu byť vykresľované priamo v prehliadači bez potreby ďalších pluginov.
+
+**Načo sa používa:**
+
+<ul> 
+<li><b>3D modelovanie:</b> Three.js umožňuje vytváranie komplexných 3D scén, modelov a objektov.</li>
+<li><b>Interaktívnosť:</b> Knižnica podporuje interakciu používateľov s modelmi (napr. zoom, otáčanie, klikanie na objekty).</li>
+<li><b>Rendering a fyzika:</b> Poskytuje pokročilé renderovacie techniky a podporu pre fyzikálne simulácie, ako napríklad svetlo, tieňovanie a textúrovanie objektov.</li></ul>
+
+Príklad základnej scény s 3D objektom:
+
+`// Vytvorenie scény
+const scene = new THREE.Scene();
+
+// Vytvorenie kamery
+const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+
+// Vytvorenie renderera
+const renderer = new THREE.WebGLRenderer();
+renderer.setSize(window.innerWidth, window.innerHeight);
+document.body.appendChild(renderer.domElement);
+
+// Vytvorenie objektu (kocky)
+const geometry = new THREE.BoxGeometry();
+const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
+const cube = new THREE.Mesh(geometry, material);
+scene.add(cube);
+
+// Nastavenie kamery
+camera.position.z = 5;
+
+// Animácia scény
+function animate() {
+    requestAnimationFrame(animate);
+    cube.rotation.x += 0.01;
+    cube.rotation.y += 0.01;
+    renderer.render(scene, camera);
+}
+animate();
+`
+
+
+
+
+
+
+
