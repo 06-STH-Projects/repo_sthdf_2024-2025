@@ -163,9 +163,9 @@ Neo4j je grafová databáza, ktorá umožňuje efektívne spravovať dáta a vz�
 
 Ako som už spomenul niekoľkokrát , backend je naprogramovaný v Pythone a má tri hlavné funkcie:
 
-**1. Získať dáta z Kubernetes API** (objekty ako pody, služby, deploymenty, atď.).
-**2. Pretransformovať tieto dáta na uzly a vzťahy** (edges) vhodné pre grafovú databázu Neo4j.
-**3. Uložiť dáta do Neo4j**, čím sa vytvorí grafová reprezentácia Kubernetes klastra.
+**1. Získať dáta z Kubernetes API** (objekty ako pody, služby, deploymenty, atď).\
+**2. Pretransformovať tieto dáta na uzly a vzťahy** (edges) vhodné pre grafovú databázu Neo4j.\
+**3. Uložiť dáta do Neo4j**, čím sa vytvorí grafová reprezentácia Kubernetes klastra.\
 
 #### Zber dát z Kubernetes API
 
@@ -179,6 +179,47 @@ deployments = apps_v1.list_deployment_for_all_namespaces(watch=False).items
 replica_sets = apps_v1.list_replica_set_for_all_namespaces(watch=False).items
 nodes = v1.list_node(watch=False).items
 ```
+
+**Ako to funguje:** Volania ako `v1.list_pod_for_all_namespaces()` využívajú Kubernetes API na získanie informácií o všetkých objektoch daného typu v rámci všetkých namespace. Týmto získame zoznam objektov, pričom každý obsahuje metadáta (meno, namespace) a špecifikácie (napr. na akom node pod beží).
+
+#### Ukladanie uzlov do Neo4j
+
+Každý objekt Kubernetes (napr. pod, node, služba) je reprezentovaný ako uzol (node) v Neo4j. Na uloženie sa používa dotaz Cypher s príkazom `MERGE`.
+
+```
+for pod in pods:
+    pod_id = f"Pod_{pod.metadata.namespace}_{pod.metadata.name}"
+    query = """
+    MERGE (p:Pod {id: $id, name: $name, namespace: $namespace})
+    """
+    parameters = {"id": pod_id, "name": pod.metadata.name, "namespace": pod.metadata.namespace}
+    session.write_transaction(create_graph, query, parameters)
+```
+
+**Ako to funguje:** Uloží každý pod (identifikovaný kombináciou namespace a mena) ako uzol s atribútmi `id`, `name`, a `namespace`. Tento princíp sa opakuje aj pre ostatné komponenty Kubernetesu, kvôli jednoduchosti som uviedol len takýto príklad pre pody. 
+
+#### Vytváranie vzťahov medzi uzlami
+
+Okrem uzlov je dôležité modelovať aj vzťahy medzi nimi. Modelujeme vzťahy ako napríklad, ktorý node hosťuje ktorý pod, ktorá služba komunikuje s ktorým podom, ktorý deployment vlastní ktorý replicaSet. 
+
+```
+for pod in pods:
+    pod_id = f"Pod_{pod.metadata.namespace}_{pod.metadata.name}"
+    if pod.spec.node_name:
+        node_id = f"Node_{pod.spec.node_name}"
+        query = """
+        MATCH (n:Node {id: $node_id})
+        MATCH (p:Pod {id: $pod_id})
+        MERGE (n)-[:HOSTS]->(p)
+        """
+        parameters = {"node_id": node_id, "pod_id": pod_id}
+        session.write_transaction(create_graph, query, parameters)
+```
+
+Táto konkrétna časť kódu predstavuje vytvorenie vzťahu medzi nodom a podom.\
+**Ako to funguje:** Najskôr nájde uzly reprezentujúce node (`Node`) a pod (`Pod`) podľa ich ID. Následne medzi nimi vytvorí vzťah HOSTS (node hostuje pod). Logika za tým je vytvoriť infraštruktúru vo forme grafovej reprezentácie, kde vzťahy reprezentujú skutočné interakcie v Kubernetes klastri.
+
+
 
 
 
