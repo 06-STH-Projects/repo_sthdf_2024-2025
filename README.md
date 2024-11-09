@@ -282,9 +282,7 @@ const Graph = ForceGraph3D()
   .backgroundColor('#000000');
 ```
 
-Farby uzlov, každý typ uzla (napr. Pod, Service) má svoju farbu.  
-Farby vzťahov, každý typ vzťahu (napr. HOSTS, OWNS) má inú farbu.  
-Interaktivita, používateľ môže kliknúť na uzly alebo ich presúvať v priestore.  
+Každý typ uzla (napr. Pod, Service) má svoju farbu, taktiež je to aj v prípade vzťahov, každý typ vzťahu (napr. HOSTS, OWNS) má inú farbu. S grafom je možné aj iteragovať, používateľ môže kliknúť na uzly alebo ich presúvať v priestore podľa potreby. 
 
 
 
