@@ -114,11 +114,15 @@ Rast Kubernetes trhu je poháňaný jeho širokým využitím v IT a telekomunik
 **KubeGlimpse** má potenciál stať sa zaujímavým pre tento trh tým, že rieši existujúci problém s vizualizáciou zložitých infraštruktúr. Vizualizačné nástroje pre Kubernetes klastre sú nevyhnutné pre udržanie vysokej úrovne výkonu a spoľahlivosti systémov, čo zvyšuje dopyt po takýchto riešeniach. **KubeGlimpse** je schopný uspokojiť potreby malých startupov, ako aj veľkých korporácií spravujúcich tisíce nodov a podov.
 
 
-## **5. Technologická vrstva**
+## **5. Návrh dizajnu**
+
+nothing to see here yet
+
+## **6. Technologická vrstva**
 
 V tejto sekcii sa pozrieme na technológie, ktoré boli použité pri vývoji KubeGlimpse, a rozdelíme ich na dve časti: **teoretickú** a **praktickú**. Najskôr si vysvetlíme jednotlivé komponenty, z ktorých sa projekt skladá, a prečo sme sa rozhodli použiť práve tieto technológie. V praktickej časti následne uvedieme konkrétne príklady toho, ako boli tieto technológie implementované v našom kóde, aby bolo jasné, ako celý systém funguje.
 
-### **5.1 Teoretický pohľad na použité technológie**
+### **6.1 Teoretický pohľad na použité technológie**
 
 **Frontend: Three.js**
 
@@ -133,84 +137,8 @@ Three.js je JavaScriptová knižnica na tvorbu 3D grafiky v prehliadači, ktorá
 
 **Príklad základnej scény s 3D objektami:**
 
+
 [Video ako táto základna scéna vyzerá](https://youtu.be/8r4LcAXUNDY)
-
-```
-import * as THREE from 'three'
-
-var camera, scene, renderer, stats;
-var geometry, group;
-var mouseX = 0,
-  mouseY = 0;
-var windowHalfX = window.innerWidth / 2;
-var windowHalfY = window.innerHeight / 2;
-init();
-animate();
-
-function init() {
-  camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 1, 10000);
-  camera.position.z = 500;
-  scene = new THREE.Scene();
-  scene.background = new THREE.Color(0x2b2b2b);
-  scene.fog = new THREE.Fog(0x2b2b2b, 1, 10000);
-  var geometry = new THREE.BoxBufferGeometry(100, 100, 100);
-  var material = new THREE.MeshNormalMaterial();
-  group = new THREE.Group();
-  for (var i = 0; i < 500; i++) {
-    var mesh = new THREE.Mesh(geometry, material);
-    mesh.position.x = Math.random() * 2000 - 1000;
-    mesh.position.y = Math.random() * 2000 - 1000;
-    mesh.position.z = Math.random() * 2000 - 1000;
-    mesh.rotation.x = Math.random() * 2 * Math.PI;
-    mesh.rotation.y = Math.random() * 2 * Math.PI;
-    mesh.matrixAutoUpdate = false;
-    mesh.updateMatrix();
-    group.add(mesh);
-  }
-
-  scene.add(group);
-  renderer = new THREE.WebGLRenderer({ antialias: false });
-  renderer.setPixelRatio(window.devicePixelRatio);
-  renderer.setSize(window.innerWidth, window.innerHeight);
-  document.body.appendChild(renderer.domElement);
-
-
-  document.addEventListener('mousemove', onDocumentMouseMove, false);
-  window.addEventListener('resize', onWindowResize, false);
-}
-
-function onWindowResize() {
-  windowHalfX = window.innerWidth / 2;
-  windowHalfY = window.innerHeight / 2;
-  camera.aspect = window.innerWidth / window.innerHeight;
-  camera.updateProjectionMatrix();
-  renderer.setSize(window.innerWidth, window.innerHeight);
-}
-
-function onDocumentMouseMove(event) {
-  mouseX = (event.clientX - windowHalfX) * 10;
-  mouseY = (event.clientY - windowHalfY) * 10;
-}
-
-function animate() {
-  requestAnimationFrame(animate);
-  render();
-}
-
-function render() {
-  var time = Date.now() * 0.001;
-  var rx = Math.sin(time * 0.7) * 0.5,
-    ry = Math.sin(time * 0.3) * 0.5,
-    rz = Math.sin(time * 0.2) * 0.5;
-  camera.position.x += (mouseX - camera.position.x) * 0.05;
-  camera.position.y += (-mouseY - camera.position.y) * 0.05;
-  camera.lookAt(scene.position);
-  group.rotation.x = rx;
-  group.rotation.y = ry;
-  group.rotation.z = rz;
-  renderer.render(scene, camera);
-}
-```
 
 
 **Backend: Python a Kubernetes API**
@@ -230,6 +158,27 @@ Neo4j je grafová databáza, ktorá umožňuje efektívne spravovať dáta a vz�
 <li><b>Ukladanie vzťahov:</b> Neo4j ukladá nody, pody a služby ako uzly, a vzťahy medzi nimi ako hrany, čím umožňuje modelovať zložité prepojenia v Kubernetes.</li> 
 <li><b>Rýchle dotazovanie:</b> Databáza umožňuje efektívne vyhľadávať a získavať informácie o vzťahoch medzi rôznymi komponentmi klastra.</li> </ul>
 
+
+### **6.2 Prakticky pohľad na použité technológie**
+
+Ako som už spomenul niekoľkokrát , backend je naprogramovaný v Pythone a má tri hlavné funkcie:
+
+**1. Získať dáta z Kubernetes API** (objekty ako pody, služby, deploymenty, atď.).
+**2. Pretransformovať tieto dáta na uzly a vzťahy** (edges) vhodné pre grafovú databázu Neo4j.
+**3. Uložiť dáta do Neo4j**, čím sa vytvorí grafová reprezentácia Kubernetes klastra.
+
+#### Zber dát z Kubernetes API
+
+Používa sa knižnica `kubernetes`, ktorá poskytuje jednoduchý prístup k rôznym API Kubernetes. Cieľom tejto časti je načítať všetky objekty z klastra, ktoré sú dôležité pre vizualizáciu (napr. nody, pody, služby).
+
+```
+# Kubernetes objects
+pods = v1.list_pod_for_all_namespaces(watch=False).items
+services = v1.list_service_for_all_namespaces(watch=False).items
+deployments = apps_v1.list_deployment_for_all_namespaces(watch=False).items
+replica_sets = apps_v1.list_replica_set_for_all_namespaces(watch=False).items
+nodes = v1.list_node(watch=False).items
+```
 
 
 
