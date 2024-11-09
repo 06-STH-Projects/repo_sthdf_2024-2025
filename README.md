@@ -164,8 +164,8 @@ Neo4j je grafová databáza, ktorá umožňuje efektívne spravovať dáta a vz�
 Ako som už spomenul niekoľkokrát , backend je naprogramovaný v Pythone a má tri hlavné funkcie:
 
 **1. Získať dáta z Kubernetes API** (objekty ako pody, služby, deploymenty, atď).  
-**2. Pretransformovať tieto dáta na uzly a vzťahy** (edges) vhodné pre grafovú databázu Neo4j.\
-**3. Uložiť dáta do Neo4j**, čím sa vytvorí grafová reprezentácia Kubernetes klastra.\
+**2. Pretransformovať tieto dáta na uzly a vzťahy** (edges) vhodné pre grafovú databázu Neo4j.  
+**3. Uložiť dáta do Neo4j**, čím sa vytvorí grafová reprezentácia Kubernetes klastra.  
 
 #### Zber dát z Kubernetes API
 
@@ -200,7 +200,9 @@ for pod in pods:
 
 #### Vytváranie vzťahov medzi uzlami
 
-Okrem uzlov je dôležité modelovať aj vzťahy medzi nimi. Modelujeme vzťahy ako napríklad, ktorý node hosťuje ktorý pod, ktorá služba komunikuje s ktorým podom, ktorý deployment vlastní ktorý replicaSet. 
+Okrem uzlov je dôležité modelovať aj vzťahy medzi nimi. Modelujeme vzťahy ako napríklad, ktorý node hosťuje ktorý pod, ktorá služba komunikuje s ktorým podom, ktorý deployment vlastní ktorý replicaSet.  
+
+Táto konkrétna časť kódu predstavuje vytvorenie vzťahu medzi nodom a podom.  
 
 ```
 for pod in pods:
@@ -215,12 +217,74 @@ for pod in pods:
         parameters = {"node_id": node_id, "pod_id": pod_id}
         session.write_transaction(create_graph, query, parameters)
 ```
-
-Táto konkrétna časť kódu predstavuje vytvorenie vzťahu medzi nodom a podom.\
 **Ako to funguje:** Najskôr nájde uzly reprezentujúce node (`Node`) a pod (`Pod`) podľa ich ID. Následne medzi nimi vytvorí vzťah HOSTS (node hostuje pod). Logika za tým je vytvoriť infraštruktúru vo forme grafovej reprezentácie, kde vzťahy reprezentujú skutočné interakcie v Kubernetes klastri.
 
+#### Export dát do JSON
 
+Aby mohol frontend vizualizovať graf, je potrebné exportovať dáta z Neo4j do formátu JSON. Tento krok získava všetky uzly a vzťahy z Neo4j a formátuje ich do štruktúry `nodes` a `links`.
 
+```
+def get_graph_data():
+    nodes_query = """
+    MATCH (n)
+    RETURN n.id AS id, labels(n) AS labels, n.name AS name, n.namespace AS namespace
+    """
+    relationships_query = """
+    MATCH (n)-[r]->(m)
+    RETURN n.id AS source, m.id AS target, type(r) AS type
+    """
+    # Vykonanie dotazov a formátovanie výsledkov
+    nodes_result = session.run(nodes_query)
+    relationships_result = session.run(relationships_query)
+
+    nodes = [ ... ]  # Spracovanie uzlov
+    links = [ ... ]  # Spracovanie vzťahov
+    return {"nodes": nodes, "links": links}
+```
+
+**Výsledný JSON**, obsahuje zoznam všetkých uzlov a vzťahov vo forme:
+
+```
+{
+  "nodes": [{ "id": "Node_1", "labels": ["Node"], "name": "node1" }],
+  "links": [{ "source": "Node_1", "target": "Pod_1", "type": "HOSTS" }]
+}
+```
+
+#### Načítanie a spracovanie dát
+
+Dáta z JSON súboru sa načítajú a uzly sa rozmiestnia do 3D priestoru. Používam tam ešte škalovací faktor keďže v začiatku sa mi zdala vizualizácia menšia. 
+```
+fetch('graph_data.json')
+  .then(res => res.json())
+  .then(data => {
+    const scaleFactor = 1.5;
+    data.nodes.forEach(node => {
+      node.x = (Math.random() - 0.5) * scaleFactor;
+      node.y = (Math.random() - 0.5) * scaleFactor;
+      node.z = (Math.random() - 0.5) * scaleFactor;
+    });
+    Graph.graphData(data);
+  });
+```
+
+#### Vizualizácia grafu
+
+Pomocou knižnice `3d-force-graph` sa uzly a vzťahy vykreslia s prispôsobenými farbami a popismi.
+
+```
+const Graph = ForceGraph3D()
+  (document.getElementById('3d-graph'))
+  .nodeLabel(node => `${node.labels[0]}: ${node.name}`)
+  .nodeColor(node => labelColors[node.labels[0]])
+  .linkLabel(link => link.type)
+  .linkColor(link => linkColors[link.type] || 'lightgray')
+  .backgroundColor('#000000');
+```
+
+Farby uzlov, každý typ uzla (napr. Pod, Service) má svoju farbu.  
+Farby vzťahov, každý typ vzťahu (napr. HOSTS, OWNS) má inú farbu.  
+Interaktivita, používateľ môže kliknúť na uzly alebo ich presúvať v priestore.  
 
 
 
