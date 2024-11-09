@@ -163,7 +163,7 @@ Neo4j je grafová databáza, ktorá umožňuje efektívne spravovať dáta a vz�
 
 Ako som už spomenul niekoľkokrát , backend je naprogramovaný v Pythone a má tri hlavné funkcie:
 
-**1. Získať dáta z Kubernetes API** (objekty ako pody, služby, deploymenty, atď).\
+**1. Získať dáta z Kubernetes API** (objekty ako pody, služby, deploymenty, atď).  
 **2. Pretransformovať tieto dáta na uzly a vzťahy** (edges) vhodné pre grafovú databázu Neo4j.\
 **3. Uložiť dáta do Neo4j**, čím sa vytvorí grafová reprezentácia Kubernetes klastra.\
 
