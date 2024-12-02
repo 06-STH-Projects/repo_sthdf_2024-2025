@@ -220,7 +220,7 @@ k samotnému Arduinu.
 
 # **Vysokoúrovňový diagram prepojenia technológií**
 
-![](model/TechnologyViewpoint.jpg) 
+![](Model/TechnologyViewpoint.jpg) 
 
 # **Softvér**
 
@@ -259,7 +259,7 @@ v miestnosti zvýši nad optimálnu, lampa bude vypnutá. Z dôvodu korektného
 zaznamenávania hodnoty intenzity svetla bude potrebné, aby sa senzor nachádzal mimo
 dosahu svetla lampy.
 
-![](model/DiagramNasvecovania.jpg) 
+![](Model/DiagramNasvecovania.jpg) 
 
 **Automatické zavlažovanie**
 
@@ -268,4 +268,4 @@ zasiela do komparátoru, ktorému je pomocou Arduina stanovená prahová hodnota
 zaznamenaná vlhkosť nižšia než prahová hodnota komparátor vyšle do Arduina signál high.
 Arduino na základe toho spustí vodnú pumpu, aby rastlinu zavlažil.
 
-![](model/DiagramZavlazovania.jpg)
+![](Model/DiagramZavlazovania.jpg)
