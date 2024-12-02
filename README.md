@@ -274,6 +274,6 @@ Arduino na základe toho spustí vodnú pumpu, aby rastlinu zavlažil.
 
 Prototyp 3D modeli kvetináča s držiakom na objímku potrebnú k nasvecovaniu rastliny.
 
-![](3DModel/kvetinac2.png)
+![](3DModel/kvetinacPrednyPohlad.png)
 
 ![](3DModel/kvetinac1.png)
