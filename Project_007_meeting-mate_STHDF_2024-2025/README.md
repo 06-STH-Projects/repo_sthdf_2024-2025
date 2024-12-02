@@ -35,7 +35,7 @@ Generovanie pomocu GPT
 ![tlac1](images/tlac1.jpeg)
 ![tlac2](images/tlac2.jpeg)
 ![tlac3](images/tlac3.jpeg)
-![tlac4](images/tlac4.jpg)
+![tlac4](images/tlac4.jpeg)
 
 ### Schéma prepojenie a výber komponentov
 
@@ -45,7 +45,7 @@ Generovanie pomocu GPT
 ![zapojenie](images/zapojenie.jpeg)
 
 ### Test FIT
-![test fit](images/test_fit.jpg)
+![test fit](images/test_fit.jpeg)
 
 ### Testovanie
 
