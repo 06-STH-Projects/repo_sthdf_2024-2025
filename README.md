@@ -6,13 +6,13 @@
 **Cieľ projektu:**
 
 Preskúmať existujúce projekty venujúce sa inteligentnému pestovanie a na ich základe navrhnúť inteligetný kvetináč spoločne s algoritmami na jeho fungovanie.
-Vytvoriť náhradu za rastlinu, ak používateľ nie je schopný zabezpečiť životnosť rastliny ani pomocou inteligetného kvetináča.
+Vytvoriť 3D model kvetináča.
 
 **Výstupy projektu:**
 
 - Návrh inteligetného kvetináča: Podrobný opis súčastok a model ich zapojenia spoločne s modelom algoritmov softvéru kvetináča.
 - Nacenenie produktu: Sumár nákladov materiálu na výrobu kvetináča. 
-- Prototyp umelej rastliny: 3D model kvetiny slúžiaci ako náhrada za živé rastliny
+- Prototyp kvetináča: 3D model kvetináča s držadlom na žiarovku.
 
 **Vlastnosti:**
 
@@ -269,3 +269,11 @@ zaznamenaná vlhkosť nižšia než prahová hodnota komparátor vyšle do Ardui
 Arduino na základe toho spustí vodnú pumpu, aby rastlinu zavlažil.
 
 ![](Model/DiagramZavlazovania.jpg)
+
+**Prototyp kvetináča**
+
+Prototyp 3D modeli kvetináča s držiakom na objímku potrebnú k nasvecovaniu rastliny.
+
+![](3DModel/kvetinac2.png)
+
+![](3DModel/kvetinac1.png)
