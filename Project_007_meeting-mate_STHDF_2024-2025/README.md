@@ -20,6 +20,7 @@ Nasledujúci obrázok popisuje biznis koncept a motiváciu za vyvojom tohto zari
 
 ### Prípady použitia 
 Zariadenie má 2 primárne využitia. Pre pracovníka Home Office poskytuje možnosť reportovania dostupnosti ostatným v domácnosti. Pre člena domácnosti je na druhú stranu výhodou možnsť zistenia dostupnosti tohto člena domácnosti alebo v pracovnom právnom koncepte - pracovníka. Prípadne ako bolo spomínané sa dá tento prípad použitia replikovať aj v kancelárii.
+
 ![UC](images/UC.png)
 
 ## Návrh
@@ -57,10 +58,12 @@ Výsledný model, pripravený pre uloženie kompomentov.
 Výber komponentov - url link
 
 Schéma zapojenia kompomentov bola vypracovaná v programe fritzing, ktorý poskytuje aj vizualizáciu jednotlivých kompomentov. Komponenty však bolo potrebné do programu importovať samostatne, kedže neboli natívne dostupné.
+
 ![schema](images/smvit.png)
 
 ### Zapojenie kompomentov
-Podľa navrhnutej schémy boli zapojené jednotlivé kompomenty. Pri narábaní s mikrokontrolérmi je možné používať aj nepájivé kontaktné pole, kde jednoduchšie môže vývojár testovať jednotlivé idei. Pre estetiku 3D modelu a veľkosť zariadenia bola preto zvolená metóda priameho letovania kontektorov na mikrokontrolér. 
+Podľa navrhnutej schémy boli zapojené jednotlivé kompomenty. Pri narábaní s mikrokontrolérmi je možné používať aj nepájivé kontaktné pole, kde jednoduchšie môže vývojár testovať jednotlivé idei. Pre estetiku 3D modelu a veľkosť zariadenia bola preto zvolená metóda priameho letovania kontektorov na mikrokontrolér.
+
 ![zapojenie](images/zapojenie.jpeg)
 
 ### Test FIT
