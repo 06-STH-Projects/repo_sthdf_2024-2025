@@ -71,12 +71,12 @@ telefóne [2].
 Tento systém je však určený iba na sledovanie stavu prostredia a neposkytuje žiadnu
 automatizovanú starostlivosť.
 
-1. ZHANG, Junyu and OU, Liangjjie. Design of Intelligent Flower Watering System Based on
+1 ZHANG, Junyu and OU, Liangjjie. Design of Intelligent Flower Watering System Based on
 STC89C52 SCM. In Proceedings of the 2021 International Conference on Control and
 Intelligent Robotics (ICCIR 2021) [online]. ACM, 2021, 126-130 [cit. 2024-11-04]. DOI:
 10.1145/3473714.3473736. Dostupné na: https://dl.acm.org/doi/10.1145/3473714.3473736
 
-2. Y. LI and J. HE. Design of Indoor Environment Monitoring System Based on WiFi. In: 2018
+2 Y. LI and J. HE. Design of Indoor Environment Monitoring System Based on WiFi. In: 2018
 2nd IEEE Advanced Information Management,Communicates, Electronic and Automation
 Control Conference (IMCEC) [online]. IEEE, 2018, 1-1845 [cit. 2024-11-04]. DOI:
 10.1109/IMCEC.2018.8469580. Dostupné na: https://ieeexplore.ieee.org/document/8469580
@@ -98,12 +98,13 @@ neskôr využiť, pretože bude signalizovať, kedy je potrebné spustiť vodné
 pripojenie sú potrebné 4 piny. VCC na zdroj energie, GND na pripojenie k uzemňovaciemu
 pinu arduina, Digital output pin a Analog output pin.
 
-![](Zdroje\Súčiastky\SenzorPodnejVlhkosti.jpg) 
+![](Zdroje/Súčiastky/SenzorPodnejVlhkosti.jpg)
+
 
 **Senzor intenzity svetla**: Za vhodný smo zvolila senzor Iduino 1485310. Odpor tohto fotorezistora klesá pokiaľ sa
 zvyšuje intenzita svetla, a tak je možné určiťhodnotu intenzity. Na jeho pripojenie sú potrebné 3 piny: napájanie, uzemnenie a analógový outputpin. 
 
-![](Zdroje\Súčiastky\SenzorIntenzitySvetla.png) 
+![](Zdroje/Súčiastky/SenzorIntenzitySvetla.png) 
 
 **Vodné čerpadlo**: Rozhodla som sa pre 12 voltové
 čerpadlo. Toto malé výkonné čerpadielko
@@ -115,7 +116,7 @@ je kompatibilná hadička. Musíme dokúpiť
 aj tú. Pôjde konkrétne o 1 meter
 silikónovej hadičky s vnútorným priemerom 8mm, keďže vonkajší priemer otvorov na čerpadle je práve 8mm
 
-![](Zdroje\Súčiastky\VodneCerpadlo.jpg) 
+![](Zdroje/Súčiastky/VodneCerpadlo.jpg) 
 
 **LED semafor**: V tomto projekte využijem dva
 LED semafory, a to na zobrazenie stupňa
@@ -127,7 +128,7 @@ je aj cenovo dostupným, a to nie len
 z dôvodu, že klasické displeje sú viac než päťnásobne drahšie, no nepotrebujeme ani externé
 napájanie a relé modul na ovládanie zobrazovacieho zariadenia.
 
-![](Zdroje\Súčiastky\Semafor.png)
+![](Zdroje/Súčiastky/Semafor.png)
 
 **LED Spectrum žiarovka pre pestovanie rastlín E27**: Žiarovka LED spektra je nielen
 vhodná na podporu rastu rastlín, pretože
@@ -137,7 +138,7 @@ bezpečnou, pretože nedochádza k jej
 prehrievaniu, a tak môže byť využívaná aj
 v uzavretých priestoroch.
 
-![](Zdroje\Súčiastky\LEDZiarovka.jpg)
+![](Zdroje/Súčiastky/LEDZiarovka.jpg)
 
 **Objímka**: Keďže Arduino nie je schopné
 poskytnúť dostatočný výkon na to, aby mohol
@@ -147,7 +148,7 @@ súčastí Sada osvetlenia E27, ktorá je
 kompatibilná s veľkosťou vybranej
 žiarovky.
 
-![](Zdroje\Súčiastky\Objimka.jpg)
+![](Zdroje/Súčiastky/Objimka.jpg)
 
 **Dvojkanálové relé**: Na to, aby sme boli schopní ovládať žiarovku
 a vodné čerpadlo je potrebné relé, keďže Arduino
@@ -157,14 +158,14 @@ pripojiť. Rozhodli sme sa pre dvojkanálové relé. Toto
 5V relé je dostatočným pre pripojenie aj žiarovky, aj
 pumpy. 
 
-![](Zdroje\Súčiastky\Rele.jpg)
+![](Zdroje/Súčiastky/Rele.jpg)
 
 **Adaptér**: Ďalej budeme potrebovať dva adaptéry na
 napájanie samotného Arduina a taktiež vodnej pumpy.
 Vybrali sme 12V adaptér s konektorom DC005, ktorý
 je kompatibilný s konektorom Arduina
 
-![](Zdroje\Súčiastky\Adapter.jpg)
+![](Zdroje/Súčiastky/Adapter.jpg)
 
 **Arduino Mega**: Náš kvetináč bude riadený Arduinom
 Mega vo verzii CH340G precízny klon. Tento
@@ -178,7 +179,7 @@ analógových pinov, ktoré pokryjú naše
 požiadavky a poskytnú možnosť
 potenciálneho pridávania ďalších zariadení v budúcnosti.
 
-![](Zdroje\Súčiastky\ArduinoMega.jpg)
+![](Zdroje/Súčiastky/ArduinoMega.jpg)
 
 **Arduino Mega protype shield**: Tento kryt uľahčuje pripájanie káblikov
 k vývojovým doskám Arduino Mega a poskytuje
@@ -187,7 +188,7 @@ Tento set taktiež obsahuje 170 bodové nepájivé
 pole, do ktorého možno jednoducho osadiť naše
 signalizačné LED diódy a infračervený prijímač.
 
-![](Zdroje\Súčiastky\ArduinoMegaprototypeshield.jpg)
+![](Zdroje/Súčiastky/ArduinoMegaprototypeshield.jpg)
 
 **Set prepojovacích káblov**: Na záver budeme ešte potrebovať set
 káblikov na prispájkovania príslušenstva
