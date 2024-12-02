@@ -42,7 +42,7 @@ Generovanie pomocu GPT
 ![schema](images/smvit.png)
 
 ### Zapojenie kompomentov
-![zapojenie](images/zapojenie.jpg)
+![zapojenie](images/zapojenie.jpeg)
 
 ### Test FIT
 ![test fit](images/test_fit.jpg)
