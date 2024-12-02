@@ -8,6 +8,7 @@ V dnešnej dobe, keď mnoho ľudí pracuje z domu, často dochádza k situáciá
 
 
 ## Biznis koncept
+Práca z domu prináša viacero výhod v oblasti time manažmentu. Pri práci z domu je potrebné častokrát komunikovať s kolegami aj
 
 ![Biznis koncept](images/concept.png)
 
@@ -31,12 +32,20 @@ Generovanie pomocu GPT
 
 ### Tlač modelu
 
+![tlac1](images/tlac1.jpeg)
+![tlac2](images/tlac2.jpeg)
+![tlac3](images/tlac3.jpeg)
+![tlac4](images/tlac4.jpg)
+
 ### Schéma prepojenie a výber komponentov
 
 ![schema](images/smvit.png)
 
-
 ### Zapojenie kompomentov
+![zapojenie](images/zapojenie.jpg)
+
+### Test FIT
+![test fit](images/test_fit.jpg)
 
 ### Testovanie
 
