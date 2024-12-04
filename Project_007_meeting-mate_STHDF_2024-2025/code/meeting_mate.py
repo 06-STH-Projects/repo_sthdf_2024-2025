@@ -1,10 +1,8 @@
-import sounddevice as sd
 import os
 import sys
 import logging
 import tkinter as tk
 from tkinter import ttk
-import numpy as np
 import time
 import belay
 import threading
@@ -26,7 +24,6 @@ def get_raspberry_pico_connection():
         logging.error("No Pico device found. Please connect your Pico and try again.")
         return None
 
-device = None
 
 # Try to connect to Raspberry Pi Pico
 DEVICE_NAME = get_raspberry_pico_connection()
@@ -43,8 +40,8 @@ def set_led_color(color):
     import neopixel
 
     led_pin = Pin(0)  # GP0 pin for NeoPixel data line
-    NUM_LEDS = 12  # Adjust according to the number of LEDs in your ring
-    led_ring = neopixel.NeoPixel(led_pin, NUM_LEDS)
+    num_of_leds = 12  # Adjust according to the number of LEDs in your ring
+    led_ring = neopixel.NeoPixel(led_pin, num_of_leds)
 
     # Fill the ring with the specified color
     led_ring.fill(color)
@@ -56,7 +53,6 @@ class MeetingMate:
         self.monitoring = False
         self.selected_mic_index = None
         self.sound_devices = []
-        #self.sound_devices = sd.query_devices()
         self.mic_ids = {
             mic.connectionID(): mic
             for mic in AVFoundation.AVCaptureDevice.devicesWithMediaType_(
@@ -145,7 +141,6 @@ class MeetingMate:
             else:
                 status_label.config(text="Monitoring is stopped", fg="red")
             root.after(500, update_status)
-
         update_status()
 
         # Run the GUI event loop
