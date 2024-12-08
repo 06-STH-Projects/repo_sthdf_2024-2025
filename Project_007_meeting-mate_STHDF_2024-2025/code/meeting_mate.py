@@ -2,7 +2,6 @@ import os
 import sys
 import logging
 import tkinter as tk
-from tkinter import ttk
 import time
 import belay
 import threading
@@ -70,9 +69,6 @@ class MeetingMate:
             self.sound_devices.append({"id": mic_id, "name": match.group(1)})
 
     def start_monitoring(self):
-        if self.selected_mic_index is None:
-            logging.error("No microphone selected!")
-            return
         self.monitoring = True
         logging.info("Starting monitoring...")
         thread = threading.Thread(target=self.monitor_microphone, daemon=True)
@@ -88,7 +84,7 @@ class MeetingMate:
         while self.monitoring:
             # Replace with actual logic to check microphone activity
             mic_in_use = self.check_microphone_activity()
-            logging.info(f"Is microphone {self.sound_devices[self.selected_mic_index]['name']} in use: {mic_in_use}")
+            # logging.info(f"Is microphone {self.sound_devices[self.selected_mic_index]['name']} in use: {mic_in_use}")
             if mic_in_use:
                 set_led_color(color=RED)
             else:
@@ -97,9 +93,13 @@ class MeetingMate:
 
     def check_microphone_activity(self):
         try:
-            response = CoreAudio.AudioObjectGetPropertyData(self.sound_devices[self.selected_mic_index]['id'],
-                                                            self.opa, 0, [], 4, None)
-            return bool(struct.unpack('I', response[2])[0])
+            for device in self.sound_devices:
+                response = CoreAudio.AudioObjectGetPropertyData(device['id'], self.opa, 0, [], 4, None)
+                if bool(struct.unpack('I', response[2])[0]):
+                    logging.info(f"Microphone {device['name']} is actively capturing audio.")
+                    return True
+                logging.info(f"Microphone {device['name']} is not active")
+            return False
         except Exception as e:
             logging.error(f"Error while monitoring microphone {self.selected_mic_index}: {e}")
         logging.debug(f"Microphone {self.selected_mic_index} is not actively capturing audio.")
@@ -107,25 +107,10 @@ class MeetingMate:
 
     def run(self):
         set_led_color(color=BLACK)
-        mic_names = [device["name"] for device in self.sound_devices]
 
         # GUI Setup
         root = tk.Tk()
         root.title("Meeting Mate")
-
-        tk.Label(root, text="Select a microphone:").pack(pady=10)
-
-        mic_selector = ttk.Combobox(root, values=mic_names, state="readonly")
-        mic_selector.pack(pady=10)
-
-        def select_microphone():
-            try:
-                self.selected_mic_index = mic_selector.current()
-                logging.info(f"Selected Microphone Index: {self.selected_mic_index}")
-            except ValueError:
-                logging.error("Invalid microphone selection")
-
-        mic_selector.bind("<<ComboboxSelected>>", lambda event: select_microphone())
 
         # Start and Stop Buttons
         tk.Button(root, text="Start Monitoring", command=self.start_monitoring).pack(pady=10)

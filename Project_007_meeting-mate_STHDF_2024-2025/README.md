@@ -1,4 +1,4 @@
-# meeting_mate
+# Meeting Mate
 
 ## Zadanie projektu
 Tento projekt sa zameriava na vývoj zariadenia, ktoré slúži na indikáciu stavu dostupnosti počas pracovných online stretnutí. Navrhované zariadenie bude monitorovať aktivitu používateľa a farebným osvetlením zobrazí jeho dostupnosť. Ak je používateľ na pracovnom hovore, zariadenie rozsvieti červené svetlo, čo signalizuje, že by nemal byť rušený. Naopak, ak nie je na hovore, rozsvieti sa zelené svetlo, čo dáva ostatným najavo, že ho môžu osloviť. Tento jednoduchý vizuálny systém umožní členom domácnosti rýchlo a jasne rozlíšiť, kedy je vhodné osobu osloviť a kedy nie. 
@@ -55,7 +55,13 @@ Výsledný model, pripravený pre uloženie kompomentov.
 ![tlac4](images/tlac4.jpeg)
 
 ### Schéma prepojenie a výber komponentov
-Výber komponentov - url link
+Pre tento projekt boli zvolené nasledujúce kompomenty:
+
+Mikrokontróler RASPBERRY Pi Pico - https://www.alza.sk/raspberry-pi-pico-d6313108.htm?o=1
+
+Kruh RGB LED-iek 12 - https://techfun.sk/produkt/kruh-rgb-led-iek-81224-3240/?gad_source=1&attribute_pa_pocet-led-v-kruhu=12
+
+Komponenty boli zvolené pre ich dostupnosť, rozmery, ktoré boli vhodné pre tento projekt a taktiež pre ich dostačujúce technické parametre pre tejto projekt.
 
 Schéma zapojenia kompomentov bola vypracovaná v programe fritzing, ktorý poskytuje aj vizualizáciu jednotlivých kompomentov. Komponenty však bolo potrebné do programu importovať samostatne, kedže neboli natívne dostupné.
 
@@ -71,13 +77,31 @@ Testovanie uloženia komponentov do vytlačeného modelu.
 ![test fit](images/test_fit.jpeg)
 
 ### Kód
-- zdrojový kód sa nachádza v priečinku code
+Zdrojový kód s komentármi sa nachádza v priečinku code. Pre správne fungovanie je potrebné spustiť kód a následne zapnúť monitorovanie.
 
-### Testovanie
-- priadnie fotiek, videa a popisu z testovania zariadenia
+
 
 ### Finálny produkt
-- fotky a popis
+Finálnym produktom je zariadenie ktoré pozostáva z 3D vytlačeného modelu, LED kruhu a mikrokontrolera. Pre fungovanie zariadenia je potrebná aj aplikácia, ktorá vykonáva meranie vyúžívania mikrofónu.
+
+Aplikácia po spustení pozostáva z 2 tlačidiel a indikátora, či je monitorovanie spustené alebo nie.
+
+![final](images/final.jpeg)
+
+
+Po spustení monitorovania sa zapne LED kruh na farbu podľa toho či je miktofón používaný alebo nie. V prípade, že používateľ nie je na online hovore, zariadenie svieti na zeleno a v prípade, že je pripojený na online meeting tak sa svetlo zmení na červené. 
+
+Aplikácia na monitorovanie je spustená ale používateľ nie je pripojený na žiadnom meetingu. 
+
+![red](images/green.jpeg)
+
+Aplikácia na monitorovanie je spustená a používateľ je pripojený na Microsoft team meetingu. Zariadenie funguje rovnako so všetkými aplikáciami skrz to, že monitoruje používanie mikrofónu a nie používanie rôznych aplikácii.
+
+
+![red](images/red.jpeg)
+
 
 ## Zhodnotenie
-- slovné zhodnotenie
+Výsledkom tohto projektu je funkčné zariadenie, ktoré po spustení softvéru reflektuje stav používateľa na online meetingu. Praktické využitie tohto zariadenie môže byť na pracovnom stole pri dobrej viditeľnosti ostatných členov domácnosti.
+
+Počas práce na tomto projekte bolo vytvorených viacero iterácii či už 3D modelu, pre lepšie uloženie komponentov. Rovnako bolo vytvorených viacero verzií softvéru pre docielenie korektného monitorovania používania mikrofónu.

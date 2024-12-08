@@ -1,4 +1,3 @@
-
 from meeting_mate import MeetingMate
 
 if __name__ == "__main__":
