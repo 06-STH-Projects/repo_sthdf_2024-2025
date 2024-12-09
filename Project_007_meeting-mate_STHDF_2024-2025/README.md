@@ -105,3 +105,6 @@ Aplikácia na monitorovanie je spustená a používateľ je pripojený na Micros
 Výsledkom tohto projektu je funkčné zariadenie, ktoré po spustení softvéru reflektuje stav používateľa na online meetingu. Praktické využitie tohto zariadenie môže byť na pracovnom stole pri dobrej viditeľnosti ostatných členov domácnosti.
 
 Počas práce na tomto projekte bolo vytvorených viacero iterácii či už 3D modelu, pre lepšie uloženie komponentov. Rovnako bolo vytvorených viacero verzií softvéru pre docielenie korektného monitorovania používania mikrofónu.
+
+#### LinkedIn link - https://www.linkedin.com/company/105199254/
+#### Youtube link - https://www.youtube.com/@meeting-mate
