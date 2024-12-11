@@ -180,6 +180,26 @@ Video about testing web app and our thermometer is recorded on the following lin
 
 ---
 
+### Lesson Learned
+
+Vyskúšali sme si prácu so 7D modelom, ktorý nám v projekte pomohol s organizáciou. Každá dimenzia mala svoje opodstatnenie aj v našom projekte a vďaka odkazom sme sa jednoducho mohli dostať presne tam kam sme potrebovali vďaka organizácii, ktorú 7D poskytuje. 
+
+Príklad TODO listu: 
+
+<img src="images/Screenshot from 2024-12-10 10-57-56.png">
+
+Príklad Resource nášho projektu, kde vidno linky v rámci Note (poznámky), odkiaľ sme čerpali informácie, spojené s Class s výstižnejším popisom. 
+
+<img src="images/Screenshot from 2024-12-10 10-57-33.png">
+
+Vyskúšali sme si prácu aj s LemonTree, konkrétne jeho Git diff, kedy nám pomohol pri zistení zmien v modeli na úrovni až labelov, connections a podobne. Vďaka porovnávaniu zmien sme minimalizovali riziko konfliktov, duplikátov pri práci viacerých členov tímu a zefektívnili sme prácu. 
+
+<img src="images/Screenshot from 2024-12-10 10-57-09.png">
+
+Predmet SMVIT (Systémové myslenie v IT) nás ukázal ako funguje taký start-up, vyskúšali sme si prácu v tíme za pomoci nástrojov ako 7D model a lemontree, čo výrazne zlepšilo efektivitu, organizáciu a profesionalitu v tíme. Celkovo sme pochopili základné princípy ako správne previesť svoje myšlienky do reality a dokonca „predať“ verejnosti svoj produkt na známych platformách ako LinkedIn, Youtube, Patreon vo forme videí a príspevkov. Prínos predmetu bol veľký pre nás a odporúčame budúcim generáciám. 
+
+---
+
 ### Documentation and Videos
 
 > [!TIP]
