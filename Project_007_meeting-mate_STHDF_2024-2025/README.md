@@ -27,12 +27,16 @@ Zariadenie má 2 primárne využitia. Pre pracovníka Home Office poskytuje mož
 
 ### Inšpirácia
 Inšpirácie boli generované pomocou DALL-E modelu a po opísaní zadania a konceptu tohto zariadenia. Pri inšpirácii pre tvar zariadenia boli generované viaceré obrázky avšak tieto 2 ma najviac zaujali a následne aj inšpirovali k vytvoreniu 3D modelu.
+
+
 ![Inspiracia](images/inspiration.png)
 
 ![Inspiracia ](images/inspiration1.png)
 
 ### 3D Model 
 Model zariadenia bol navrhnutý po inpirácii z generovaných obrázkov na základe biznis konceptu. Rozmety boli prispôsobené pre zhodné uloženie kompomentov a to mikrokontroléra Raspberry Pi Pico a RGB LED kruhu s dvanástimi adresovateľnými diódami.
+
+
 ![3D Model 1](images/3D_1.jpg)
 
 ![3D Model 2](images/3D_2.jpg)
@@ -45,13 +49,18 @@ Navrhovaný aktivity diagram znázorňujúci fungovanie a jednotlivé kroky v pr
 ### Tlač modelu
 Po vymodelovaní v programe SketchUp, bol model vytlačený. Tlač bola opakované pre lepšie prispôsobenie jednotlivých kompomentov v modeli.
 
+
 ![tlac1](images/tlac1.jpeg)
 
+
 ![tlac2](images/tlac2.jpeg)
+
 
 ![tlac3](images/tlac3.jpeg)
 
 Výsledný model, pripravený pre uloženie kompomentov.
+
+
 ![tlac4](images/tlac4.jpeg)
 
 ### Schéma prepojenie a výber komponentov
@@ -65,15 +74,19 @@ Komponenty boli zvolené pre ich dostupnosť, rozmery, ktoré boli vhodné pre t
 
 Schéma zapojenia kompomentov bola vypracovaná v programe fritzing, ktorý poskytuje aj vizualizáciu jednotlivých kompomentov. Komponenty však bolo potrebné do programu importovať samostatne, kedže neboli natívne dostupné.
 
+
 ![schema](images/smvit.png)
 
 ### Zapojenie kompomentov
 Podľa navrhnutej schémy boli zapojené jednotlivé kompomenty. Pri narábaní s mikrokontrolérmi je možné používať aj nepájivé kontaktné pole, kde jednoduchšie môže vývojár testovať jednotlivé idei. Pre estetiku 3D modelu a veľkosť zariadenia bola preto zvolená metóda priameho letovania kontektorov na mikrokontrolér.
 
+
 ![zapojenie](images/zapojenie.jpeg)
 
 ### Test FIT
 Testovanie uloženia komponentov do vytlačeného modelu.
+
+
 ![test fit](images/test_fit.jpeg)
 
 ### Kód
