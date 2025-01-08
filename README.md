@@ -270,10 +270,44 @@ Arduino na základe toho spustí vodnú pumpu, aby rastlinu zavlažil.
 
 ![](Model/DiagramZavlazovania.jpg)
 
+# **3D model kvetináča**
+
+Všetky modely boli vytvorené voľne dostupným nástrojom ThinkerCad a sú súčasťou repozitára v priečinku s názvom 3DModel.
+
 **Prototyp kvetináča**
 
-Prototyp 3D modeli kvetináča s držiakom na objímku potrebnú k nasvecovaniu rastliny.
+Prototyp 3D modela kvetináča s držiakom na objímku potrebnú k nasvecovaniu rastliny.
 
 ![](3DModel/kvetinacPrednyPohlad.png)
 
-![](3DModel/kvetinac1.png)
+![](3DModel/kvetinacNahlad.png)
+
+**3D model držiaka na lampu pre nasvecovanie rastliny**
+
+Po vytvorení 3D prototypu sme si uvedomili, že rastliny sú štandarndne zaobstaravané spoločne s črepníkom. Rozhodli sme sa preto odstrániť túto časť produktu, pretože potreba presadenia rastliny by bola pre zákazníka zbytočnou komplikáciou. Po získaní presných rozmerov objímky sme pretvorili náš kvetináč na zapichovací držiak lampy pre rast rastlín. Držiak sme otočili o 180 stupňov aby bolo možné ho vytlačiť.
+
+![](3DModel/drziakSNozickamiPrednyPohlad.png)
+
+![](3DModel/drziakSNozickamiSpodnyPohlad.png)
+
+Na úpravu 3D modelu pre tlač sme využili nástroj Autodesk fusion, ktorý ponúka možnosť opravy modelu. Nástroj upraví štruktúru modelu tak, že odstráni vnútorné prekrivy polygónov tvoriacich model tak, aby mohol byť úspešne vytlačený
+
+![](3DModel/vyhladenyDzriakSNozickami.png)
+
+**Súčiatky 3D modelu držiaka na lampu pre nasvecovanie rastliny**
+
+Pri snahe o vytlačenie sme narazili na problém a to ten, že držiak bol príliš veľký pre dostupnú tlačiareň. Vzhľadom na to, že rozmery vnútorného otvoru korešpondujú s rozmermi objímky, ktorú uvádzame vyššie nebolo možné model jednoducho zmenšiť a bolo potrebné ho prepracovať. Administrátor, ktorý nám mal asistovať pri tlači, taktiež navrhol aby sme zmenili to ako náš model vyzerá a rozdelili ho na držiak a nožičky a to z dvôvodu, že na našom modeli dochádza k postupnému zužovaniu otvoru čo by vraj mohlo spôsobiť problémy pri tlači a výsledný výtlačok by mohol zatiecť. Aby sme zatečeniu predišli bolo potrebné držiak otočiť. Na to však bolo nutné odeliť nožičky keďže tie sa nemohli tlačiť ako podklad držiaci stojan.
+
+![](3DModel/drziakPrednyPohlad.png)
+
+
+![](3DModel/drziakNahlad.png)
+
+
+![](3DModel/Nozicky.png)
+
+*Model po reparácii nástrojom Autodesk fusion*
+
+![](3DModel/vyhladenyDrziak.png)
+
+![](3DModel/vyhladeneNozicky.png)
