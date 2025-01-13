@@ -1,5 +1,8 @@
 # Kubeglimpse
 
+![KubeGlimpse logo](assets/kubeglimpse.png)
+![Vizualizacia architektury](assets/kubeglimpse-logo.png)
+
 ## 1. Popis projektu
 
 KubeGlimpse je 3D vizualizačná aplikácia, určená na interaktívne prehliadanie a analýzu Kubernetes klastrov. Aplikácia využíva technológie **Python**, **Django**, **Quasar**, **Three.js** a **ArangoDB**, čím poskytuje dynamickú a prehľadnú reprezentáciu komplexných Kubernetes infraštruktúr. Cieľom projektu je umožniť používateľom efektívnu správu, diagnostiku a analýzu klastrov prostredníctvom vizuálne prívetivého a modulárneho rozhrania.
@@ -7,23 +10,26 @@ KubeGlimpse je 3D vizualizačná aplikácia, určená na interaktívne prehliada
 
 ### **Ako KubeGlimpse funguje?**
 
-1. **Získavanie dát z Kubernetes API**  
+**1. Získavanie dát z Kubernetes API**  
    Aplikácia napísaná v **Pythone** pravidelne pristupuje k Kubernetes API a získava potrebné informácie o klastroch, vrátane nodov, podov, služieb, namespaces, ConfigMap a Secret objektov.
 
-2. **Ukladanie dát do ArangoDB**  
+**2. Ukladanie dát do ArangoDB**  
    Zozbierané dáta sú ukladané do **ArangoDB**, multi-model databázy kombinujúcej dokumentový a grafový prístup. Tento prístup umožňuje efektívne modelovanie a spracovanie vzťahov medzi komponentmi klastra bez potreby komplexných transformácií dát.
 
-3. **Transformácia dát do JSON**  
+**3. Transformácia dát do JSON**  
    Dáta sú transformované do JSON formátu, čo uľahčuje ich načítanie a manipuláciu v 3D grafickom prostredí.
 
-4. **3D Vizualizácia pomocou Three.js (3D-Forced-Graph)**  
+**4. 3D Vizualizácia pomocou Three.js (3D-Forced-Graph)**  
    Vizualizácia využíva Three.js spolu s knižnicou 3D-Force-Graph na zobrazenie vzťahov medzi komponentmi klastra. Uzly reprezentujú jednotlivé komponenty (nody, pody, služby) a hrany zobrazujú ich vzájomné vzťahy.
 
-5. **Interaktívne funkcie vizualizácie**  
+**5. Interaktívne funkcie vizualizácie**  
    Používatelia môžu interagovať s 3D modelom klastra – približovať, otáčať a kliknúť na jednotlivé uzly pre zobrazenie detailných informácií o daných komponentoch, ako je stav podu, alokované zdroje či metadáta.
 
-6. **Škáľovateľnosť a výkonnosť**  
+**6. Škáľovateľnosť a výkonnosť**  
    KubeGlimpse je navrhnutý tak, aby zvládal vizualizáciu malých aj veľkých klastrov. Vďaka efektívnemu spracovaniu dát v ArangoDB a optimalizovanému vykresľovaniu v Three.js aplikácia plynule funguje aj pri komplexných infraštruktúrach.
+
+![Vizualizacia architektury](assets/arch-viz.png)
+(Zobrazenie architektúry)
 
 
 ## **2. Motivácia**
@@ -160,7 +166,7 @@ Backend aplikácie KubeGlimpse je implementovaný pomocou Django frameworku, kto
 
 **Hlavné funkcie backendu:**
 
-1. **Získavanie dát z Kubernetes API:** Používa sa knižnica `kubernetes` pre Python, ktorá umožňuje jednoduchý prístup k rôznym API Kubernetes a získavanie informácií o nodoch, podoch, službách a ďalších objektoch.
+**1. Získavanie dát z Kubernetes API:** Používa sa knižnica `kubernetes` pre Python, ktorá umožňuje jednoduchý prístup k rôznym API Kubernetes a získavanie informácií o nodoch, podoch, službách a ďalších objektoch.
 ```
 from kubernetes import client, config
 
@@ -173,7 +179,7 @@ services = v1.list_service_for_all_namespaces(watch=False).items
 deployments = apps_v1.list_deployment_for_all_namespaces(watch=False).items
 nodes = v1.list_node(watch=False).items
 ```
-2. **Ukladanie dát do ArangoDB:** Kubernetes objekty sú ukladané ako JSON dokumenty do kolekcie `nodes` a ich vzťahy do kolekcie `edges`.
+**2. Ukladanie dát do ArangoDB:** Kubernetes objekty sú ukladané ako JSON dokumenty do kolekcie `nodes` a ich vzťahy do kolekcie `edges`.
 ```
 from arango import ArangoClient
 
@@ -191,7 +197,7 @@ for pod in pods:
     }
     db.collection("nodes").upsert(document["_key"], document)
 ```
-3. **Vytváranie vzťahov medzi uzlami:** Vzťahy medzi objektmi sú definované v kolekcii edges pomocou AQL dotazov.
+**3. Vytváranie vzťahov medzi uzlami:** Vzťahy medzi objektmi sú definované v kolekcii edges pomocou AQL dotazov.
 ```
 query = """
 FOR pod IN nodes
