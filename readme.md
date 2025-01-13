@@ -277,6 +277,7 @@ Po iteráciach nad low-fidelity prototypom, sme vytvorili finálny, [klikateľn�
 - PLA Material
 - Material Temperature 200°
 - Bed Temperature 60°
+
 ![](https://bitbucket.org/st10-st18-st34-lendify/repo_sthdf_2024-2025/raw/accdbbda8f292bf61bc4c7ee061c27b6e7892d0d/3D%20print/images/3.png)
 
 #### 3D Modeling with Blender
