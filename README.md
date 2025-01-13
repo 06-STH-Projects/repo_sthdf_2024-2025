@@ -1,7 +1,8 @@
 # Kubeglimpse
 
-![KubeGlimpse logo](assets/kubeglimpse.png)
-![Vizualizacia architektury](assets/kubeglimpse-logo.png)
+![KubeGlimpse logo](assets/kubeglimpse-logo.png)
+![KubeGlimpse wallpaper](assets/kubeglimpse.png)
+
 
 ## 1. Popis projektu
 
@@ -197,6 +198,17 @@ for pod in pods:
     }
     db.collection("nodes").upsert(document["_key"], document)
 ```
+![Zobrazenie nodes](assets/nodes_arango)
+  (Kolekcia `nodes` v ramci datábazy)
+![Zobrazenie nodes](assets/nodes_properties)
+  (Vlastnosti `node`)
+![Zobrazenie nodes](assets/edges_arango)
+  (Kolekcia `edges` v ramci datábazy)
+![Zobrazenie nodes](assets/edge_arango)
+  (Vlastnosti `edge`)
+
+
+
 **3. Vytváranie vzťahov medzi uzlami:** Vzťahy medzi objektmi sú definované v kolekcii edges pomocou AQL dotazov.
 ```
 query = """
