@@ -28,7 +28,11 @@ Lendify spája komunitu ľudí s podobnými záujmami a vytvára priestor pre je
 Počas semestra sme si viedli vlastný GitHub repozitár: https://github.com/Matt1s/SMVIT
 Na v tomto repozitári sme si viedli zmeny na vlastných vetvách.
 
+![](https://bitbucket.org/st10-st18-st34-lendify/repo_sthdf_2024-2025/raw/3c6d2d06c0fc167930a65bab140f3b9463bbc45a/repos/github.png)
+
 Na porovnávanie branchí sme použili LemonTree.
+
+![](https://bitbucket.org/st10-st18-st34-lendify/repo_sthdf_2024-2025/raw/3c6d2d06c0fc167930a65bab140f3b9463bbc45a/repos/lemontree.png)
 
 Následne sme si forkli repozitár, a presunuli dáta na Bitbucket, kde sme dotvorili túto dokumentáciu.
 
