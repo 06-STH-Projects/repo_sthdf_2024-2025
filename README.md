@@ -229,12 +229,15 @@ db.aql.execute(query)
 
 ![Zobrazenie nodes](assets/k8s_graph2.jpeg)  
 (Kubernetes cluster v rámci grafovej datábazy)
+
 ![Zobrazenie nodes](assets/k8s_graph.jpeg)  
 (Zobrazenie kolekcie `edges` a `nodes` ako graf s prepojenými vzťahm.)
-![Zobrazenie nodes](assets/k8s_graph3.jpeg)  
+
+![Zobrazenie nodes](assets/k8s_graph3.png)  
 (Zobrazenie jenotlivých vlastností)
-![Zobrazenie nodes](assets/k8s_graph4.jpeg)  
-(Zobrazenie jenotlivých vlastností`)
+
+![Zobrazenie nodes](assets/k8s_graph4.png)  
+(Zobrazenie jenotlivých vlastností)
 
 **Frontend implementácia s Quasar a Three.js**
 
