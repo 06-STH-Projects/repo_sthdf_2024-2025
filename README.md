@@ -114,14 +114,14 @@ Rast Kubernetes trhu je poháňaný jeho širokým využitím v IT a telekomunik
 
 ## **5. Návrh dizajnu**
 
-![Zobrazenie nodes](assets/navrh1.png)  
-(Kolekcia `nodes` v ramci datábazy)
+![Zobrazenie nodes](assets/navrh1.png)
+(Návrh ako by vyzerala vizualizácia)
+
 ![Zobrazenie nodes](assets/navrh2.png)  
-(Vlastnosti `node`)
+(Návrh architektúry)
+
 ![Zobrazenie nodes](assets/ORM_approach.png)  
 **(Schéma ORM prístupu k modelovaniu Kubernetes zdrojov. Tento prístup si vyžadoval pevné definície tried pre každý typ zdroja, čo obmedzilo flexibilitu a rozšíriteľnosť systému, a preto sme prešli na data-driven prístup.)**
-
-
 
 ## **6. Technologická vrstva**
 
