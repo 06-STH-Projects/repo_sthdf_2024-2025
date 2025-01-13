@@ -23,3 +23,62 @@ Lendify spája komunitu ľudí s podobnými záujmami a vytvára priestor pre je
 - Linked In Matej: [Matej Pakán](https://www.linkedin.com/in/matejpakan/)
 - Linked In Adam: [Adam Jankanič](https://www.linkedin.com/in/adam-jankani%C4%8D-46aa61238/)
 - Linked In Ivan: [Ivan Gajdoš](https://www.linkedin.com/in/ivan-gajdos-175902267/)
+
+### Minimum Viable Product
+Pre našu aplikáciu sme identifikovali nasledovné funkčné a nefunkčné požiadavky.
+#### Zoznam požiadaviek pre MVP Lendify (funkcie)
+- Vedenie účtu
+  - prihlásenie / registrácia
+  - overenie používateľa na základe dokladu
+  - výber prevodom na účet
+  - editácia účtu (minimálne meno + fotka)
+      - zobrazovať dĺžku registrácie a úspešných objednávok
+- Zalistovanie produktu
+  - Názov
+  - Popis
+  - Fotografie, video
+  - Kategorizácia (Náradie → Vŕtačka → Príklepové vŕtačky)
+  - Cena za jednotku času
+      - Zábezpeka
+  - Miesta vyzdvihnutia
+  - Možný čas vyzdvihnutia (dostupnosť)
+  - Možný čas na vrátenie
+  - Výpočet provízie
+- Objednávka produktu
+  - Čas vyzdvihnutia
+  - Čas vrátenia
+- Recenzie
+  - Na konkrétny produkt konkrétneho používateľa
+  - Priemer recenzií konkrétneho produktu všetkých používateľov
+  - Recenzia predávajúceho
+  - Recenzia kupujúceho
+  - Schopnosť spraviť recenziu po objednávke
+- Filter
+  - Vzdialenosť (+ mapa)
+  - Cena
+    - za deň + prepočet na presný čas
+  - Kategórie
+    - podkategórie
+  - Na základe recenzií produktu
+  - Na záklde recenzií používateľa
+  - Dostupnosť (v %)
+- Zoradzovanie
+- Manažment objednávok
+  - Dashboard príjmov a skladu
+  - Zoznam nových objednávok
+  - Zoznam prebiehajúcich
+  - Možnosť expirácie objednávky, ak predávajuci nezareaguje
+  - Čet + notifikácia
+- Support
+  - Ticket systém
+  - Vytvorenie ticketu
+  - Čet s operátorom
+#### Zoznam požiadaviek pre MVP Lendify (nefunkčné)
+- Bezpečnosť peňazí
+- Vedenie účtov
+- Prevody peňazí
+- Vedenie zábezpek
+- Obchodné podmienky
+
+
+
