@@ -29,7 +29,7 @@ KubeGlimpse je 3D vizualizačná aplikácia, určená na interaktívne prehliada
 **6. Škáľovateľnosť a výkonnosť**  
    KubeGlimpse je navrhnutý tak, aby zvládal vizualizáciu malých aj veľkých klastrov. Vďaka efektívnemu spracovaniu dát v ArangoDB a optimalizovanému vykresľovaniu v Three.js aplikácia plynule funguje aj pri komplexných infraštruktúrach.
 
-![Vizualizacia architektury](assets/arch-viz.png)
+![Vizualizacia architektury](assets/arch-viz.png)  
 (Zobrazenie architektúry)
 
 
@@ -198,14 +198,14 @@ for pod in pods:
     }
     db.collection("nodes").upsert(document["_key"], document)
 ```
-![Zobrazenie nodes](assets/nodes_arango)
-  (Kolekcia `nodes` v ramci datábazy)
-![Zobrazenie nodes](assets/nodes_properties)
-  (Vlastnosti `node`)
-![Zobrazenie nodes](assets/edges_arango)
-  (Kolekcia `edges` v ramci datábazy)
-![Zobrazenie nodes](assets/edge_arango)
-  (Vlastnosti `edge`)
+![Zobrazenie nodes](assets/nodes_arango.png)  
+(Kolekcia `nodes` v ramci datábazy)
+![Zobrazenie nodes](assets/nodes_properties.png)  
+(Vlastnosti `node`)
+![Zobrazenie nodes](assets/edges_arango.png)  
+(Kolekcia `edges` v ramci datábazy)
+![Zobrazenie nodes](assets/edge_arango.png)  
+(Vlastnosti `edge`)
 
 
 
