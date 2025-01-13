@@ -268,7 +268,9 @@ const Graph = ForceGraph3D()(document.getElementById('3d-graph'))
 
 ![Zobrazenie nodes](assets/product.png)  
 (Samotná vizualizácia)
+
 ![Zobrazenie nodes](assets/product2.png)  
 (Zobrazenie jednotlivého bodu)
+
 ![Zobrazenie nodes](assets/product3.png)  
 (Možnosť pohybovať s grafom/jednotlivými bodmi)
