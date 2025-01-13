@@ -161,3 +161,83 @@ Zobrazuje technickú architektúru systému postavenú na Kubernetes clusteri s 
 ![Technology Viewpoint Diagram!](https://bitbucket.org/st10-st18-st34-lendify/repo_sthdf_2024-2025/raw/c644a032ff23172bed4f07b7054a536e6e327783/model/images/Technology%20Viewpoint.png "Technology Viewpoint Diagram")
 
 
+### Low Fidelity
+
+Nižšie zobrazujeme nákresy na papier, ako by mohla aplikácia vyzerať. Keďže sme to kreslili na papier, ušetrili sme mnoho času a mohli sme brainstormovať.
+
+#### Domovská stránka
+![](https://bitbucket.org/st10-st18-st34-lendify/repo_sthdf_2024-2025/raw/14bdf4f8332732ae116e180f7b59cc890f1766bd/n%C3%A1%C4%8Drty/Fin%C3%A1lne%20n%C3%A1%C4%8Drty/desktop/1_homepage.png)
+
+#### Pridanie nového produktu
+![](https://bitbucket.org/st10-st18-st34-lendify/repo_sthdf_2024-2025/raw/14bdf4f8332732ae116e180f7b59cc890f1766bd/n%C3%A1%C4%8Drty/Fin%C3%A1lne%20n%C3%A1%C4%8Drty/desktop/2_add_new_product.png)
+
+#### Katalóg produktov 
+![](https://bitbucket.org/st10-st18-st34-lendify/repo_sthdf_2024-2025/raw/14bdf4f8332732ae116e180f7b59cc890f1766bd/n%C3%A1%C4%8Drty/Fin%C3%A1lne%20n%C3%A1%C4%8Drty/desktop/3_catalog.png)
+
+#### Stránka produktu
+![](https://bitbucket.org/st10-st18-st34-lendify/repo_sthdf_2024-2025/raw/14bdf4f8332732ae116e180f7b59cc890f1766bd/n%C3%A1%C4%8Drty/Fin%C3%A1lne%20n%C3%A1%C4%8Drty/desktop/4_single_item.png)
+
+#### Platba krok č.1
+![](https://bitbucket.org/st10-st18-st34-lendify/repo_sthdf_2024-2025/raw/14bdf4f8332732ae116e180f7b59cc890f1766bd/n%C3%A1%C4%8Drty/Fin%C3%A1lne%20n%C3%A1%C4%8Drty/desktop/5_checkout.png)
+
+#### Platba krok č.2
+![](https://bitbucket.org/st10-st18-st34-lendify/repo_sthdf_2024-2025/raw/14bdf4f8332732ae116e180f7b59cc890f1766bd/n%C3%A1%C4%8Drty/Fin%C3%A1lne%20n%C3%A1%C4%8Drty/desktop/6_payment_details.png)
+
+#### Platba krok č.3
+![](https://bitbucket.org/st10-st18-st34-lendify/repo_sthdf_2024-2025/raw/14bdf4f8332732ae116e180f7b59cc890f1766bd/n%C3%A1%C4%8Drty/Fin%C3%A1lne%20n%C3%A1%C4%8Drty/desktop/7_summary.png)
+
+#### Stránka používateľa
+![](https://bitbucket.org/st10-st18-st34-lendify/repo_sthdf_2024-2025/raw/14bdf4f8332732ae116e180f7b59cc890f1766bd/n%C3%A1%C4%8Drty/Fin%C3%A1lne%20n%C3%A1%C4%8Drty/desktop/8_personal_user_page.png)
+
+### Klikateľný prototyp
+
+Po iteráciach nad low-fidelity prototypom, sme vytvorili finálny, [klikateľný prototyp](https://bitbucket.org/st10-st18-st34-lendify/repo_sthdf_2024-2025/src/_2024_PRJ_01-ST10-ST18-ST34-Lendify/klikate%C4%BEn%C3%BD%20prototyp/Lendify-Prototype.mp4).
+
+##### Prihlásenie
+![](https://bitbucket.org/st10-st18-st34-lendify/repo_sthdf_2024-2025/raw/ccda4363efeab853e69ba8b4294b9fda269a4895/klikate%C4%BEn%C3%BD%20prototyp/images/login.png)
+
+##### Domovská stránka
+![](https://bitbucket.org/st10-st18-st34-lendify/repo_sthdf_2024-2025/raw/ccda4363efeab853e69ba8b4294b9fda269a4895/klikate%C4%BEn%C3%BD%20prototyp/images/homepage.png)
+
+##### Katalóg produktov
+![](https://bitbucket.org/st10-st18-st34-lendify/repo_sthdf_2024-2025/raw/ccda4363efeab853e69ba8b4294b9fda269a4895/klikate%C4%BEn%C3%BD%20prototyp/images/Catalog.png)
+
+##### Stránka produktu
+![](https://bitbucket.org/st10-st18-st34-lendify/repo_sthdf_2024-2025/raw/ccda4363efeab853e69ba8b4294b9fda269a4895/klikate%C4%BEn%C3%BD%20prototyp/images/SingleItem.png)
+
+##### Pridanie nového produktu
+![](https://bitbucket.org/st10-st18-st34-lendify/repo_sthdf_2024-2025/raw/ccda4363efeab853e69ba8b4294b9fda269a4895/klikate%C4%BEn%C3%BD%20prototyp/images/addNewProduct.png)
+
+##### Detail pôžičky
+![](https://bitbucket.org/st10-st18-st34-lendify/repo_sthdf_2024-2025/raw/ccda4363efeab853e69ba8b4294b9fda269a4895/klikate%C4%BEn%C3%BD%20prototyp/images/borrowDetails.png)
+
+##### Platba krok č.1
+![](https://bitbucket.org/st10-st18-st34-lendify/repo_sthdf_2024-2025/raw/ccda4363efeab853e69ba8b4294b9fda269a4895/klikate%C4%BEn%C3%BD%20prototyp/images/checkout.png)
+
+##### Platba krok č.2
+![](https://bitbucket.org/st10-st18-st34-lendify/repo_sthdf_2024-2025/raw/ccda4363efeab853e69ba8b4294b9fda269a4895/klikate%C4%BEn%C3%BD%20prototyp/images/checkout2.png)
+
+##### Platba krok č.3
+![](https://bitbucket.org/st10-st18-st34-lendify/repo_sthdf_2024-2025/raw/ccda4363efeab853e69ba8b4294b9fda269a4895/klikate%C4%BEn%C3%BD%20prototyp/images/checkout3.png)
+
+##### Košík
+![](https://bitbucket.org/st10-st18-st34-lendify/repo_sthdf_2024-2025/raw/ccda4363efeab853e69ba8b4294b9fda269a4895/klikate%C4%BEn%C3%BD%20prototyp/images/Cart.png)
+
+
+### 3D Printing
+
+- 3D Printer Creality
+- PLA Material
+- Material Temperature 200°
+- Bed Temperature 60°
+![](https://bitbucket.org/st10-st18-st34-lendify/repo_sthdf_2024-2025/raw/accdbbda8f292bf61bc4c7ee061c27b6e7892d0d/3D%20print/images/3.png)
+
+#### 3D Modeling with Blender
+![](https://bitbucket.org/st10-st18-st34-lendify/repo_sthdf_2024-2025/raw/accdbbda8f292bf61bc4c7ee061c27b6e7892d0d/3D%20print/images/1.png)
+
+#### CURA – program for 3D printer
+![](https://bitbucket.org/st10-st18-st34-lendify/repo_sthdf_2024-2025/raw/accdbbda8f292bf61bc4c7ee061c27b6e7892d0d/3D%20print/images/2.png)
+
+### Finálny produkt
+![](https://bitbucket.org/st10-st18-st34-lendify/repo_sthdf_2024-2025/raw/accdbbda8f292bf61bc4c7ee061c27b6e7892d0d/3D%20print/images/4.png)
+
