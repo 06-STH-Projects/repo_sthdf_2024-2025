@@ -1,0 +1,37 @@
+# Loads default set of integrations. Do not remove.
+default_config:
+
+# Load frontend themes from the themes folder
+frontend:
+  themes: !include_dir_merge_named themes
+
+automation: !include automations.yaml
+script: !include scripts.yaml
+scene: !include scenes.yaml
+
+mqtt:
+  sensor:
+    - name: 'Weather Station Temperature'
+      state_topic: 'home/sensor/weather_station'
+      value_template: '{{ value_json.temperature }}'
+      unit_of_measurement: '°C'
+
+    - name: 'Weather Station Humidity'
+      state_topic: 'home/sensor/weather_station'
+      value_template: '{{ value_json.humidity }}'
+      unit_of_measurement: '%'
+
+    - name: "Weather Station Air Quality"
+      state_topic: 'home/sensor/weather_station'
+      value_template: "{{ value_json.air_quality }}"
+      unit_of_measurement: "AQI"
+
+    - name: "Weather Station TVOC"
+      state_topic: 'home/sensor/weather_station'
+      value_template: "{{ value_json.tvoc }}"
+      unit_of_measurement: "ppb"
+
+    - name: "Weather Station eCO2"
+      state_topic: 'home/sensor/weather_station'
+      unit_of_measurement: "ppm"
+      value_template: "{{ value_json.eco2 }}"
