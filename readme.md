@@ -133,6 +133,49 @@ Pre našu aplikáciu sme identifikovali nasledovné funkčné a nefunkčné pož
 - Vedenie zábezpek
 - Obchodné podmienky
 
+### Výber technológií
+
+Pri vývoji aplikácie Lendify je dôležité zvoliť vhodné technológie, ktoré zabezpečia plynulú funkčnosť, škálovateľnosť a bezpečnosť celého systému. Na základe požiadaviek a analýzy odporúčame nasledujúce technologické riešenia:
+
+#### Frontend
+Pre vývoj používateľského rozhrania je ideálnou voľbou **React** v kombinácii s **TypeScriptom**. Táto kombinácia umožňuje vytvárať modulárne a flexibilné komponenty, pričom TypeScript zabezpečuje vyššiu stabilitu kódu vďaka statickému typovaniu. Alternatívne je možné použiť **Next.js** na zlepšenie SEO a rýchlejšie načítanie stránok pomocou server-side rendering (SSR).
+
+#### Backend
+Na strane servera je vhodné použiť:
+- **Node.js** s frameworkom **Express** – rýchly a škálovateľný nástroj pre REST API.
+- Alternatívne **Django** (Python), ak by boli potrebné robustné nástroje na správu dát a užívateľov.
+
+Tieto technológie poskytujú flexibilitu pri práci s dátami, vývoj modulov pre správu objednávok, notifikácií a bezpečnostných prvkov.
+
+#### Databáza
+Pre ukladanie štruktúrovaných údajov je najlepšou voľbou **PostgreSQL**, ktorý ponúka vysoký výkon a podporu komplexných dotazov. Na ukladanie neštruktúrovaných dát, ako sú obrázky a videá, môžeme použiť **Firebase** alebo **Cloud Storage**.
+
+#### Platobné systémy
+Integrácia platobných brán je nevyhnutná pre bezpečné spracovanie transakcií:
+- **Stripe** – jednoduchá implementácia, široká podpora API a vysoká bezpečnosť.
+- **PayPal API** – osvedčené riešenie na globálne platby.
+
+#### Mapy a geolokácia
+Na implementáciu filtrov podľa vzdialenosti a vyhľadávania na je najlepšou možnosťou **Google Maps API**, ktoré poskytuje robustné a presné geolokačné služby.
+
+#### Zabezpečenie
+Bezpečnosť je kľúčovým prvkom aplikácie:
+- **OAuth 2.0** na autentifikáciu používateľov.
+- Šifrovanie hesiel a citlivých údajov pomocou **bcrypt**.
+- Zabezpečenie platieb a účtov pomocou TLS/SSL certifikátov.
+
+#### Škálovanie a nasadenie
+Pre zaistenie škálovateľnosti a dostupnosti aplikácie:
+- Použitie **Docker** a **Kubernetes** na kontajnerizáciu a orchestru nasadení.
+
+
+#### Mobilné aplikácie
+Ak bude aplikácia rozšírená o natívne mobilné aplikácie môžeme použiť:
+- **Swift** pre iOS a **Kotlin** pre Android, ak je prioritou výkonnosť.
+- **React Native** na rýchlejší vývoj multiplatformových aplikácií.
+
+Tieto technológie spoločne tvoria komplexnú infraštruktúru, ktorá zabezpečuje spoľahlivé a efektívne fungovanie aplikácie Lendify, pričom spĺňa všetky požiadavky na funkčnosť a bezpečnosť.
+
 ### Modely
 Tieto diagramy lepšie predstavujú systém Lendify, zobrazený z rôznych uhlov pohľadu - technického, aplikačného, procesného, motivačného, organizačného a produktového.
 
