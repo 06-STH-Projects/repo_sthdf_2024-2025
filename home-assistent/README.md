@@ -1,5 +1,7 @@
 # School Project: Weather Station Integration with Home Assistant
 
+Original repo on [GitHub](https://github.com/PatrikMalina/home-assistent).
+
 This Python project connects a weather station to [Home Assistant (HA)](https://www.home-assistant.io/) using the MQTT protocol.
 
 ## Features
