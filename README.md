@@ -1,36 +1,29 @@
 # Kubeglimpse
 
-- [Part 1: Setup](docs/popis.md)
+## 1. Popis projektu
+
+KubeGlimpse je 3D vizualizačná aplikácia, určená na interaktívne prehliadanie a analýzu Kubernetes klastrov. Aplikácia využíva technológie **Python**, **Django**, **Quasar**, **Three.js** a **ArangoDB**, čím poskytuje dynamickú a prehľadnú reprezentáciu komplexných Kubernetes infraštruktúr. Cieľom projektu je umožniť používateľom efektívnu správu, diagnostiku a analýzu klastrov prostredníctvom vizuálne prívetivého a modulárneho rozhrania.
 
 
 ### **Ako KubeGlimpse funguje?**
 
 1. **Získavanie dát z Kubernetes API**  
-   Základ aplikácie je naprogramovaný v **Pythone**, ktorý pravidelne pristupuje k **Kubernetes API** a získava všetky potrebné informácie o Kubernetese. Tieto informácie o obsahujú:
+   Aplikácia napísaná v **Pythone** pravidelne pristupuje k Kubernetes API a získava potrebné informácie o klastroch, vrátane nodov, podov, služieb, namespaces, ConfigMap a Secret objektov.
 
-
-   <ul>
-  <li><b>Nody (Nodes):</b> Fyzické alebo virtuálne servery, ktoré hostia <b>pody</b>. Nody sú základnými stavebnými jednotkami Kubernetes klastrov a poskytujú výpočtový výkon, na ktorom aplikácie bežia.</li>
-  <li><b>Pody (Pods):</b> Najmenšie a najzákladnejšie vykonávateľné jednotky v Kubernetes. Pody predstavujú zoskupenie jedného alebo viacerých kontajnerov, ktoré bežia spolu a zdieľajú rovnaké zdroje (napr. sieť a úložisko).</li>
-  <li><b>Služby (Services):</b> Abstrakcia, ktorá definuje, ako aplikácie (pody) komunikujú s inými aplikáciami alebo klientmi. Služby umožňujú trvalý prístup k podom, aj keď sa ich IP adresy dynamicky menia.</li>
-  <li><b>Namespaces:</b> Logické oddelenia v Kubernetes, ktoré umožňujú rozdelenie klastrov na izolované časti. Používajú sa na organizovanie a správu rôznych projektov, tímov alebo prostredí v rámci toho istého klastra.</li>
-  <li><b>ConfigMap a Secret:</b> Konfiguračné objekty používané na správu nastavení aplikácií. <b>ConfigMap</b> slúži na ukladanie nekritických dát ako sú konfiguračné súbory, zatiaľ čo <b>Secret</b> je používaný na ukladanie citlivých informácií (napr. heslá alebo API kľúče).
-</ul>
-
-2. **Ukladanie dát do Neo4j**  
-   Po zozbieraní sa dáta ukladajú do **Neo4j**, grafovej databázy optimalizovanej na modelovanie a spracovanie vzťahov medzi jednotlivými objektmi v Kubernetese. Neo4j databáza umožňuje robiť efektívne databázove dotazy a manipuláciu s dátami, ktoré reprezentujú vzťahy medzi podmi, nodmi, službami a ďalšími komponentmi klastra.
+2. **Ukladanie dát do ArangoDB**  
+   Zozbierané dáta sú ukladané do **ArangoDB**, multi-model databázy kombinujúcej dokumentový a grafový prístup. Tento prístup umožňuje efektívne modelovanie a spracovanie vzťahov medzi komponentmi klastra bez potreby komplexných transformácií dát.
 
 3. **Transformácia dát do JSON**  
-   Zozbierané dáta sú transformované do **JSON formátu**, ktorý slúži ako podklad pre vizualizáciu. Tento formát je ideálny pre rýchle načítanie a manipuláciu v 3D grafickom prostredí.
+   Dáta sú transformované do JSON formátu, čo uľahčuje ich načítanie a manipuláciu v 3D grafickom prostredí.
 
-4. **3D Vizualizácia pomocou Three.js (Forced Graph)**  
-   Vizualizácia v **Three.js** využíva 3D **forced-graph** na zobrazenie vzťahov medzi komponentmi. Tento typ grafu simuluje fyzikálne interakcie medzi objektmi, čím sa dynamicky zobrazuje štruktúra klastra. Uzly reprezentujú jednotlivé komponenty (nody, pody, služby), zatiaľ čo hrany zobrazujú vzťahy medzi nimi (napr. ktorý pod beží na ktorom node).
+4. **3D Vizualizácia pomocou Three.js (3D-Forced-Graph)**  
+   Vizualizácia využíva Three.js spolu s knižnicou 3D-Force-Graph na zobrazenie vzťahov medzi komponentmi klastra. Uzly reprezentujú jednotlivé komponenty (nody, pody, služby) a hrany zobrazujú ich vzájomné vzťahy.
 
 5. **Interaktívne funkcie vizualizácie**  
-   Používatelia môžu s 3D modelom klastra interagovať, približovať ho, otáčať a klikať na jednotlivé uzly, aby zobrazili podrobnosti o danom komponente (napr. stav podu, alokované zdroje, metadáta). Táto funkcia umožňuje detailnú analýzu klastrov a rýchlu identifikáciu problémov alebo nezrovnalostí.
+   Používatelia môžu interagovať s 3D modelom klastra – približovať, otáčať a kliknúť na jednotlivé uzly pre zobrazenie detailných informácií o daných komponentoch, ako je stav podu, alokované zdroje či metadáta.
 
 6. **Škáľovateľnosť a výkonnosť**  
-   KubeGlimpse je optimalizovaný tak, aby zvládal vizualizáciu malých aj veľkých klastrov. Vďaka efektívnej práci s dátami v Neo4j a používaniu Three.js pre vykresľovanie 3D grafov môže aplikácia plynule fungovať aj pri komplexných infraštruktúrach.
+   KubeGlimpse je navrhnutý tak, aby zvládal vizualizáciu malých aj veľkých klastrov. Vďaka efektívnemu spracovaniu dát v ArangoDB a optimalizovanému vykresľovaniu v Three.js aplikácia plynule funguje aj pri komplexných infraštruktúrach.
 
 
 ## **2. Motivácia**
@@ -122,16 +115,16 @@ V tejto sekcii sa pozrieme na technológie, ktoré boli použité pri vývoji Ku
 
 ### **6.1 Teoretický pohľad na použité technológie**
 
-**Frontend: Three.js**
+**Frontend: Quasar Framework & Three.js**
 
-Three.js je JavaScriptová knižnica na tvorbu 3D grafiky v prehliadači, ktorá používa WebGL. Poskytuje robustný súbor nástrojov na vytváranie interaktívnych 3D modelov a animácií, ktoré môžu byť vykresľované priamo v prehliadači bez potreby ďalších pluginov.
+Quasar je framework postavený na Vue.js, ktorý umožňuje efektívny vývoj moderných a responzívnych webových aplikácií. V kombinácii s Three.js a knižnicou 3D-Force-Graph poskytuje robustné nástroje na tvorbu interaktívnych 3D vizualizácií priamo v prehliadači.
 
 **Načo sa používa:**
 
 <ul> 
-<li><b>3D modelovanie:</b> Three.js umožňuje vytváranie komplexných 3D scén, modelov a objektov.</li>
-<li><b>Interaktívnosť:</b> Knižnica podporuje interakciu používateľov s modelmi (napr. zoom, otáčanie, klikanie na objekty).</li>
-<li><b>Rendering a fyzika:</b> Poskytuje pokročilé renderovacie techniky a podporu pre fyzikálne simulácie, ako napríklad svetlo, tieňovanie a textúrovanie objektov.</li></ul>
+<li><b>3D modelovanie:</b> Three.js umožňuje vytváranie komplexných 3D scén a objektov, ktoré sú vizualizované pomocou WebGL.</li>
+<li><b>Interaktívnosť:</b> Quasar a Three.js podporujú interakciu používateľov s vizualizáciou, ako je zoom, otáčanie a kliknutie na objekty pre zobrazenie detailov.</li>
+<li><b>Responzívny dizajn:</b> Quasar zabezpečuje, že aplikácia je prístupná a použiteľná na rôznych zariadeniach a obrazovkách.</li></ul>
 
 **Príklad základnej scény s 3D objektami:**
 
@@ -141,120 +134,82 @@ Three.js je JavaScriptová knižnica na tvorbu 3D grafiky v prehliadači, ktorá
 
 **Backend: Python a Kubernetes API**
 
-Backend KubeGlimpse je naprogramovaný v jazyku Python a používa Kubernetes API na získavanie aktuálnych informácií o klastroch. Python je obľúbený hlavne kvôli svojej jednoduchosti a bohatému ekosystému knižníc, ktoré uľahčujú prácu s API a databázami.
+Backend **KubeGlimpse** je postavený na frameworku Django, ktorý poskytuje robustnú základňu pre správu aplikačnej logiky, komunikáciu s databázou a API. Kombinácia Django a Kubernetes API umožňuje efektívne získavanie a spracovávanie dát o Kubernetes klastroch.
 
 <ul> 
-<li><b>Získavanie dát:</b> Pythonové skripty komunikujú s Kubernetes API a zhromažďujú informácie o nodoch, podoch, službách a iných objektoch v klastri.</li>
-<li><b>Spracovanie dát:</b> Dáta sa spracovávajú a transformujú do podoby, ktorá sa dá následne uložiť do databázy Neo4j a vizualizovať na frontende.</li> 
-<li><b>Automatizácia:</b> Python je tiež využívaný na automatické úlohy, ako je pravidelná aktualizácia dát alebo zisťovanie stavu klastra.</li> </ul>
+<li><b>Správa dát:</b> Django poskytuje nástroje na správu a manipuláciu s dátami získanými z Kubernetes API.</li>
+<li><b>API komunikácia:</b> Umožňuje komunikáciu medzi frontendom a databázou prostredníctvom REST API.</li> 
+<li><b>Automatizácia:</b> Django skripty zabezpečujú pravidelnú synchronizáciu dát a monitorovanie stavu klastra.</li> </ul>
 
-**Databáza: Neo4j**
+**Databáza: ArangoDB**
 
-Neo4j je grafová databáza, ktorá umožňuje efektívne spravovať dáta a vzťahy medzi nimi v rámci Kubernetes klastrov. Je ideálna pre modelovanie zložitých štruktúr, ako sú klastre, pretože umožňuje efektívne dotazovanie a vizualizáciu vzťahov.
+ArangoDB je multi-model databáza, ktorá kombinuje dokumentový a grafový prístup, čo je ideálne pre modelovanie komplexných vzťahov v Kubernetes klastroch.
 
 <ul>
-<li><b>Ukladanie vzťahov:</b> Neo4j ukladá nody, pody a služby ako uzly, a vzťahy medzi nimi ako hrany, čím umožňuje modelovať zložité prepojenia v Kubernetes.</li> 
-<li><b>Rýchle dotazovanie:</b> Databáza umožňuje efektívne vyhľadávať a získavať informácie o vzťahoch medzi rôznymi komponentmi klastra.</li> </ul>
+<li><b>Flexibilné ukladanie dát:</b> Neo4j ukladá nody, pody a služby ako uzly, a vzťahy medzi nimi ako hrany, čím umožňuje modelovať zložité prepojenia v Kubernetes.</li> 
+<li><b>Efektívne dotazovanie:</b> Databáza umožňuje efektívne vyhľadávať a získavať informácie o vzťahoch medzi rôznymi komponentmi klastra.</li>
+<li><b>Škálovateľnosť:</b> Vhodná pre veľké a dynamické dátové sady, čo je nevyhnutné pre komplexné Kubernetes infraštruktúry.</li>
+ </ul>
 
 
 ### **6.2 Prakticky pohľad na použité technológie**
 
-Ako som už spomenul niekoľkokrát , backend je naprogramovaný v Pythone a má tri hlavné funkcie:
+**Backend implementácia s Django a ArangoDB**
 
-**1. Získať dáta z Kubernetes API** (objekty ako pody, služby, deploymenty, atď).  
-**2. Pretransformovať tieto dáta na uzly a vzťahy** (edges) vhodné pre grafovú databázu Neo4j.  
-**3. Uložiť dáta do Neo4j**, čím sa vytvorí grafová reprezentácia Kubernetes klastra.  
+Backend aplikácie KubeGlimpse je implementovaný pomocou Django frameworku, ktorý zabezpečuje komunikáciu s Kubernetes API a ukladanie dát do ArangoDB.
 
-#### Zber dát z Kubernetes API
+**Hlavné funkcie backendu:**
 
-Používa sa knižnica `kubernetes`, ktorá poskytuje jednoduchý prístup k rôznym API Kubernetes. Cieľom tejto časti je načítať všetky objekty z klastra, ktoré sú dôležité pre vizualizáciu (napr. nody, pody, služby).
-
+1. **Získavanie dát z Kubernetes API:** Používa sa knižnica `kubernetes` pre Python, ktorá umožňuje jednoduchý prístup k rôznym API Kubernetes a získavanie informácií o nodoch, podoch, službách a ďalších objektoch.
 ```
-# Kubernetes objects
+from kubernetes import client, config
+
+config.load_kube_config()
+v1 = client.CoreV1Api()
+apps_v1 = client.AppsV1Api()
+
 pods = v1.list_pod_for_all_namespaces(watch=False).items
 services = v1.list_service_for_all_namespaces(watch=False).items
 deployments = apps_v1.list_deployment_for_all_namespaces(watch=False).items
-replica_sets = apps_v1.list_replica_set_for_all_namespaces(watch=False).items
 nodes = v1.list_node(watch=False).items
 ```
-
-**Ako to funguje:** Volania ako `v1.list_pod_for_all_namespaces()` využívajú Kubernetes API na získanie informácií o všetkých objektoch daného typu v rámci všetkých namespace. Týmto získame zoznam objektov, pričom každý obsahuje metadáta (meno, namespace) a špecifikácie (napr. na akom node pod beží).
-
-#### Ukladanie uzlov do Neo4j
-
-Každý objekt Kubernetes (napr. pod, node, služba) je reprezentovaný ako uzol (node) v Neo4j. Na uloženie sa používa dotaz Cypher s príkazom `MERGE`.
-
+2. **Ukladanie dát do ArangoDB:** Kubernetes objekty sú ukladané ako JSON dokumenty do kolekcie `nodes` a ich vzťahy do kolekcie `edges`.
 ```
+from arango import ArangoClient
+
+client = ArangoClient()
+db = client.db('kubeglimpse', username='root', password='password')
+
 for pod in pods:
-    pod_id = f"Pod_{pod.metadata.namespace}_{pod.metadata.name}"
-    query = """
-    MERGE (p:Pod {id: $id, name: $name, namespace: $namespace})
-    """
-    parameters = {"id": pod_id, "name": pod.metadata.name, "namespace": pod.metadata.namespace}
-    session.write_transaction(create_graph, query, parameters)
+    document = {
+        "_key": f"Pod_{pod.metadata.namespace}_{pod.metadata.name}",
+        "type": "Pod",
+        "name": pod.metadata.name,
+        "namespace": pod.metadata.namespace,
+        "labels": pod.metadata.labels,
+        "node_name": pod.spec.node_name
+    }
+    db.collection("nodes").upsert(document["_key"], document)
+```
+3. **Vytváranie vzťahov medzi uzlami:** Vzťahy medzi objektmi sú definované v kolekcii edges pomocou AQL dotazov.
+```
+query = """
+FOR pod IN nodes
+    FILTER pod.type == "Pod" AND pod.node_name != null
+    LET node = FIRST(FOR n IN nodes FILTER n.name == pod.node_name AND n.type == "Node" RETURN n)
+    INSERT { _from: node._id, _to: pod._id, relation: "HOSTS" } INTO edges
+"""
+db.aql.execute(query)
 ```
 
-**Ako to funguje:** Uloží každý pod (identifikovaný kombináciou namespace a mena) ako uzol s atribútmi `id`, `name`, a `namespace`. Tento princíp sa opakuje aj pre ostatné komponenty Kubernetesu, kvôli jednoduchosti som uviedol len takýto príklad pre pody. 
+**Frontend implementácia s Quasar a Three.js**
 
-#### Vytváranie vzťahov medzi uzlami
+Frontend aplikácie KubeGlimpse je vyvinutý pomocou Quasar frameworku a využíva Three.js spolu s 3D-Force-Graph pre 3D vizualizáciu Kubernetes klastrov.
 
-Okrem uzlov je dôležité modelovať aj vzťahy medzi nimi. Modelujeme vzťahy ako napríklad, ktorý node hosťuje ktorý pod, ktorá služba komunikuje s ktorým podom, ktorý deployment vlastní ktorý replicaSet.  
-
-Táto konkrétna časť kódu predstavuje vytvorenie vzťahu medzi nodom a podom.  
-
+**Načítanie dát z backendu:**
 ```
-for pod in pods:
-    pod_id = f"Pod_{pod.metadata.namespace}_{pod.metadata.name}"
-    if pod.spec.node_name:
-        node_id = f"Node_{pod.spec.node_name}"
-        query = """
-        MATCH (n:Node {id: $node_id})
-        MATCH (p:Pod {id: $pod_id})
-        MERGE (n)-[:HOSTS]->(p)
-        """
-        parameters = {"node_id": node_id, "pod_id": pod_id}
-        session.write_transaction(create_graph, query, parameters)
-```
-**Ako to funguje:** Najskôr nájde uzly reprezentujúce node (`Node`) a pod (`Pod`) podľa ich ID. Následne medzi nimi vytvorí vzťah HOSTS (node hostuje pod). Logika za tým je vytvoriť infraštruktúru vo forme grafovej reprezentácie, kde vzťahy reprezentujú skutočné interakcie v Kubernetes klastri.
-
-#### Export dát do JSON
-
-Aby mohol frontend vizualizovať graf, je potrebné exportovať dáta z Neo4j do formátu JSON. Tento krok získava všetky uzly a vzťahy z Neo4j a formátuje ich do štruktúry `nodes` a `links`.
-
-```
-def get_graph_data():
-    nodes_query = """
-    MATCH (n)
-    RETURN n.id AS id, labels(n) AS labels, n.name AS name, n.namespace AS namespace
-    """
-    relationships_query = """
-    MATCH (n)-[r]->(m)
-    RETURN n.id AS source, m.id AS target, type(r) AS type
-    """
-    # Vykonanie dotazov a formátovanie výsledkov
-    nodes_result = session.run(nodes_query)
-    relationships_result = session.run(relationships_query)
-
-    nodes = [ ... ]  # Spracovanie uzlov
-    links = [ ... ]  # Spracovanie vzťahov
-    return {"nodes": nodes, "links": links}
-```
-
-**Výsledný JSON**, obsahuje zoznam všetkých uzlov a vzťahov vo forme:
-
-```
-{
-  "nodes": [{ "id": "Node_1", "labels": ["Node"], "name": "node1" }],
-  "links": [{ "source": "Node_1", "target": "Pod_1", "type": "HOSTS" }]
-}
-```
-
-#### Načítanie a spracovanie dát
-
-Dáta z JSON súboru sa načítajú a uzly sa rozmiestnia do 3D priestoru. Používam tam ešte škalovací faktor keďže v začiatku sa mi zdala vizualizácia menšia. 
-```
-fetch('graph_data.json')
-  .then(res => res.json())
+fetch('/graph-data/')
+  .then(response => response.json())
   .then(data => {
     const scaleFactor = 1.5;
     data.nodes.forEach(node => {
@@ -265,23 +220,17 @@ fetch('graph_data.json')
     Graph.graphData(data);
   });
 ```
-
-#### Vizualizácia grafu
-
-Pomocou knižnice `3d-force-graph` sa uzly a vzťahy vykreslia s prispôsobenými farbami a popismi.
-
+**Vizualizácia grafu:**
 ```
-const Graph = ForceGraph3D()
-  (document.getElementById('3d-graph'))
-  .nodeLabel(node => `${node.labels[0]}: ${node.name}`)
-  .nodeColor(node => labelColors[node.labels[0]])
+import ForceGraph3D from '3d-force-graph';
+
+const Graph = ForceGraph3D()(document.getElementById('3d-graph'))
+  .nodeLabel(node => `${node.type}: ${node.name}`)
+  .nodeColor(node => labelColors[node.type] || 'lightgray')
   .linkLabel(link => link.type)
   .linkColor(link => linkColors[link.type] || 'lightgray')
   .backgroundColor('#000000');
 ```
-
-Každý typ uzla (napr. Pod, Service) má svoju farbu, taktiež je to aj v prípade vzťahov, každý typ vzťahu (napr. HOSTS, OWNS) má inú farbu. S grafom je možné aj iteragovať, používateľ môže kliknúť na uzly alebo ich presúvať v priestore podľa potreby. 
-
 
 
 
