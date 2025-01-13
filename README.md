@@ -114,7 +114,14 @@ Rast Kubernetes trhu je poháňaný jeho širokým využitím v IT a telekomunik
 
 ## **5. Návrh dizajnu**
 
-nothing to see here yet
+![Zobrazenie nodes](assets/navrh1.png)  
+(Kolekcia `nodes` v ramci datábazy)
+![Zobrazenie nodes](assets/navrh2.png)  
+(Vlastnosti `node`)
+![Zobrazenie nodes](assets/ORM_approach.png)  
+**(Schéma ORM prístupu k modelovaniu Kubernetes zdrojov. Tento prístup si vyžadoval pevné definície tried pre každý typ zdroja, čo obmedzilo flexibilitu a rozšíriteľnosť systému, a preto sme prešli na data-driven prístup.)**
+
+
 
 ## **6. Technologická vrstva**
 
@@ -200,11 +207,11 @@ for pod in pods:
 ```
 ![Zobrazenie nodes](assets/nodes_arango.png)  
 (Kolekcia `nodes` v ramci datábazy)
-![Zobrazenie nodes](assets/nodes_properties.png)  
+![Zobrazenie nodes](assets/node_properties.png)  
 (Vlastnosti `node`)
 ![Zobrazenie nodes](assets/edges_arango.png)  
 (Kolekcia `edges` v ramci datábazy)
-![Zobrazenie nodes](assets/edge_arango.png)  
+![Zobrazenie nodes](assets/edge_properties.png)  
 (Vlastnosti `edge`)
 
 
@@ -219,6 +226,15 @@ FOR pod IN nodes
 """
 db.aql.execute(query)
 ```
+
+![Zobrazenie nodes](assets/k8s_graph2.jpeg)  
+(Kubernetes cluster v rámci grafovej datábazy)
+![Zobrazenie nodes](assets/k8s_graph.jpeg)  
+(Zobrazenie kolekcie `edges` a `nodes` ako graf s prepojenými vzťahm.)
+![Zobrazenie nodes](assets/k8s_graph3.jpeg)  
+(Zobrazenie jenotlivých vlastností)
+![Zobrazenie nodes](assets/k8s_graph4.jpeg)  
+(Zobrazenie jenotlivých vlastností`)
 
 **Frontend implementácia s Quasar a Three.js**
 
@@ -250,9 +266,9 @@ const Graph = ForceGraph3D()(document.getElementById('3d-graph'))
   .backgroundColor('#000000');
 ```
 
-
-
-
-
-
-
+![Zobrazenie nodes](assets/product.png)  
+(Samotná vizualizácia)
+![Zobrazenie nodes](assets/product2.png)  
+(Zobrazenie jednotlivého bodu)
+![Zobrazenie nodes](assets/product3.png)  
+(Možnosť pohybovať s grafom/jednotlivými bodmi)
