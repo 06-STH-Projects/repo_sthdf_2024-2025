@@ -133,3 +133,31 @@ Pre našu aplikáciu sme identifikovali nasledovné funkčné a nefunkčné pož
 - Vedenie zábezpek
 - Obchodné podmienky
 
+### Modely
+Tieto diagramy lepšie predstavujú systém Lendify, zobrazený z rôznych uhlov pohľadu - technického, aplikačného, procesného, motivačného, organizačného a produktového.
+
+##### Organization Viewpoint:
+Predstavuje organizačnú štruktúru spoločnosti od vedenia (majitelia, investori, C-level) cez stredný manažment až po výkonných pracovníkov (programátori, návrhári, dizajnéri).
+![Organization Viewpoint Diagram!](https://bitbucket.org/st10-st18-st34-lendify/repo_sthdf_2024-2025/raw/c644a032ff23172bed4f07b7054a536e6e327783/model/images/Organization%20Viewpoint.png "Organization Viewpoint Diagram")
+
+##### Motivation Viewpoint:
+Ukazuje motivačné faktory pre dve hlavné skupiny - vlastníkov a záujemcov. Pre vlastníkov je kľúčové zníženie času na získanie záujemcu, pre záujemcov flexibilita a úspora nákladov.
+![Motivation Viewpoint Diagram!](https://bitbucket.org/st10-st18-st34-lendify/repo_sthdf_2024-2025/raw/c644a032ff23172bed4f07b7054a536e6e327783/model/images/Motivation%20Viewpoint.png "Motivation Viewpoint Diagram")
+
+Product Viewpoint:
+Zobrazuje proces zápožičky produktu v systéme od jeho zalistovania cez vytvorenie požiadavky na výpožičku až po platbu a uzatvorenie zmluvy. Zachytáva interakciu medzi zákazníkom, aplikáciou a podpornými službami.
+![Product Viewpoint Diagram!](https://bitbucket.org/st10-st18-st34-lendify/repo_sthdf_2024-2025/raw/c644a032ff23172bed4f07b7054a536e6e327783/model/images/Product%20Viewpoint.png "Product Viewpoint Diagram")
+
+##### Business Process Cooperation Viewpoint:
+Zachytáva proces zalistovania produktu od vyplnenia povinných údajov až po overenie obsahu. Proces zahŕňa interakciu medzi používateľom, systémom, AI a redaktorom.
+![Business Process Cooperation Viewpoint Diagram!](https://bitbucket.org/st10-st18-st34-lendify/repo_sthdf_2024-2025/raw/c644a032ff23172bed4f07b7054a536e6e327783/model/images/Business%20Process%20Cooperation%20Viewpoint.png "Business Process Cooperation Viewpoint Diagram")
+
+##### Application Usage Viewpoint:
+Opisuje proces požičiavania predmetu v troch hlavných krokoch - pridanie predmetu, požičanie a vzájomné hodnotenie. Všetky tieto služby sú prepojené s mobilnou/webovou aplikáciou.
+![Application Usage Viewpoint!](https://bitbucket.org/st10-st18-st34-lendify/repo_sthdf_2024-2025/raw/c644a032ff23172bed4f07b7054a536e6e327783/model/images/Application%20Usage%20Viewpoint.png "Application Usage Viewpoint")
+
+##### Technology Viewpoint:
+Zobrazuje technickú architektúru systému postavenú na Kubernetes clusteri s MongoDB a PostgreSQL databázami. Systém je zabezpečený firewallom a obsahuje záložné riešenie pre dáta. Podporuje rôzne operačné systémy na strane klienta.
+![Technology Viewpoint Diagram!](https://bitbucket.org/st10-st18-st34-lendify/repo_sthdf_2024-2025/raw/c644a032ff23172bed4f07b7054a536e6e327783/model/images/Technology%20Viewpoint.png "Technology Viewpoint Diagram")
+
+
