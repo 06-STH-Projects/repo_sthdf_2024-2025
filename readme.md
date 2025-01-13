@@ -32,9 +32,54 @@ Na porovnávanie branchí sme použili LemonTree.
 
 Následne sme si forkli repozitár, a presunuli dáta na Bitbucket, kde sme dotvorili túto dokumentáciu.
 
-### Minimum Viable Product
+## Minimum Viable Product
+
+### Funkcie aplikácie Lendify
+Aplikácia Lendify ponúka širokú škálu funkcií, ktoré zjednodušujú prenajímanie a správu produktov medzi používateľmi. Od intuitívneho pridávania produktov, prepracovaných filtrov a recenzií až integrovaný čet. Všetky funkcie sú navrhnuté s dôrazom na užívateľskú jednoduchosť a efektívnosť. Cieľom aplikácie je vytvoriť bezpečné a transparentné prostredie pre vzájomné zdieľanie zdrojov.
+### Prihlásenie a registrácia
+Používatelia sa môžu prihlásiť alebo zaregistrovať, pričom proces zahŕňa overenie dokladu totožnosti. Účty umožňujú editáciu údajov (meno, fotografia) a zobrazenie štatistík, ako je dĺžka registrácie a počet úspešných objednávok.
+
+
+### Zalistovanie produktu
+Je možné pridávať produkty s nasledovnými detailmi:
+- Názov, popis a fotografie/videá
+- Kategórie a podkategórie (napr. Náradie → Vŕtačka → Príklepové vŕtačky)
+- Cena za časovú jednotku a výška zábezpeky
+- Miesta a časy vyzdvihnutia a vrátenia
+
+![](https://bitbucket.org/st10-st18-st34-lendify/repo_sthdf_2024-2025/raw/14bdf4f8332732ae116e180f7b59cc890f1766bd/n%C3%A1%C4%8Drty/Fin%C3%A1lne%20n%C3%A1%C4%8Drty/desktop/2_add_new_product.png)
+
+Používatelia môžu pri pridávaní produktov využiť možnosť nahrávať kvalitné fotografie a videá, ktoré lepšie predstavia ponúkaný produkt. Taktiež môžu detailne špecifikovať kategórie a podkategórie, čo zjednodušuje vyhľadávanie zo strany zákazníkov. Pri každom produkte je možné uviesť viacero miest vyzdvihnutia, čo pridáva flexibilitu pre predávajúcich aj kupujúcich.
+
+### Objednávka produktu
+Objednávkový proces umožňuje jednoduché a intuitívne zadávanie presných časov vyzdvihnutia a vrátenia produktu. Používateľ má možnosť sledovať stav objednávky v reálnom čase a notifikácie ho upozornia na všetky dôležité zmeny. Po dokončení objednávky môže hodnotiť predávajúceho aj samotný produkt, čím prispieva k transparentnosti platformy.
+
+![](https://bitbucket.org/st10-st18-st34-lendify/repo_sthdf_2024-2025/raw/7d98e99d3d3f3809494fd76f966c14547e94ab86/n%C3%A1%C4%8Drty/Fin%C3%A1lne%20n%C3%A1%C4%8Drty/desktop/4_single_item.png)
+![](https://bitbucket.org/st10-st18-st34-lendify/repo_sthdf_2024-2025/raw/7d98e99d3d3f3809494fd76f966c14547e94ab86/n%C3%A1%C4%8Drty/Fin%C3%A1lne%20n%C3%A1%C4%8Drty/desktop/5_checkout.png)
+
+### Filter a vyhľadávanie
+Je umožnené filtrovať produkty podľa:
+- Vzdialenosti (vrátane mapy)
+- Ceny
+- Kategórie, podkategórie
+- Recenzií produktu a používateľa
+- Dostupnosti (v %)
+
+![](https://bitbucket.org/st10-st18-st34-lendify/repo_sthdf_2024-2025/raw/accdbbda8f292bf61bc4c7ee061c27b6e7892d0d/n%C3%A1%C4%8Drty/Fin%C3%A1lne%20n%C3%A1%C4%8Drty/desktop/3_catalog.png)
+Pokročilé filtre umožňujú presné hľadanie produktov podľa individuálnych potrieb. Napríklad pomocou mapy si môžu používatelia vyhľadať produkty v blízkosti a porovnať ceny rôznych predávajúcich. Systém zobrazuje aj hodnotenie produktov a predávajúcich, čo zjednodušuje rozhodovanie pri výbere.
+
+### Čet a notifikácie
+Integrovaný čet poskytuje rýchlu komunikáciu medzi predávajúcim a kupujúcim, čím urýchľuje riešenie nejasností alebo dohody o detailoch objednávky. Notifikácie informujú používateľov o príchode nových správ, zmenách v objednávkach či dôležitých aktualizáciách v aplikácii.
+
+
+### Hodnotenie 
+Systém hodnotení pomáha budovať dôveru medzi používateľmi. Okrem hodnotenia produktov môžu používatelia zanechať spätnú väzbu aj na správanie predávajúcich a kupujúcich. Všetky recenzie sú verejné a zobrazujú priemerné hodnotenie pre jednoduché porovnávanie. Týmto spôsobom sa vytvára komunita zodpovedných používateľov, ktorí si navzájom dôverujú.
+![](https://bitbucket.org/st10-st18-st34-lendify/repo_sthdf_2024-2025/raw/accdbbda8f292bf61bc4c7ee061c27b6e7892d0d/n%C3%A1%C4%8Drty/Fin%C3%A1lne%20n%C3%A1%C4%8Drty/desktop/8_personal_user_page.png)
+
+#### Celý zoznam features:
+
 Pre našu aplikáciu sme identifikovali nasledovné funkčné a nefunkčné požiadavky.
-#### Zoznam požiadaviek pre MVP Lendify (funkcie)
+##### Zoznam požiadaviek pre MVP Lendify (funkcie)
 - Vedenie účtu
   - prihlásenie / registrácia
   - overenie používateľa na základe dokladu
@@ -81,12 +126,10 @@ Pre našu aplikáciu sme identifikovali nasledovné funkčné a nefunkčné pož
   - Ticket systém
   - Vytvorenie ticketu
   - Čet s operátorom
-#### Zoznam požiadaviek pre MVP Lendify (nefunkčné)
+##### Zoznam požiadaviek pre MVP Lendify (nefunkčné)
 - Bezpečnosť peňazí
 - Vedenie účtov
 - Prevody peňazí
 - Vedenie zábezpek
 - Obchodné podmienky
-
-
 
