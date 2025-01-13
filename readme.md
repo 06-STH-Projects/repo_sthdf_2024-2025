@@ -24,6 +24,14 @@ Lendify spája komunitu ľudí s podobnými záujmami a vytvára priestor pre je
 - Linked In Adam: [Adam Jankanič](https://www.linkedin.com/in/adam-jankani%C4%8D-46aa61238/)
 - Linked In Ivan: [Ivan Gajdoš](https://www.linkedin.com/in/ivan-gajdos-175902267/)
 
+### Spoločná práca
+Počas semestra sme si viedli vlastný GitHub repozitár: https://github.com/Matt1s/SMVIT
+Na v tomto repozitári sme si viedli zmeny na vlastných vetvách.
+
+Na porovnávanie branchí sme použili LemonTree.
+
+Následne sme si forkli repozitár, a presunuli dáta na Bitbucket, kde sme dotvorili túto dokumentáciu.
+
 ### Minimum Viable Product
 Pre našu aplikáciu sme identifikovali nasledovné funkčné a nefunkčné požiadavky.
 #### Zoznam požiadaviek pre MVP Lendify (funkcie)
