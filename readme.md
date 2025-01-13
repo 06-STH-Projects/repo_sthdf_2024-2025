@@ -144,7 +144,7 @@ Predstavuje organizačnú štruktúru spoločnosti od vedenia (majitelia, invest
 Ukazuje motivačné faktory pre dve hlavné skupiny - vlastníkov a záujemcov. Pre vlastníkov je kľúčové zníženie času na získanie záujemcu, pre záujemcov flexibilita a úspora nákladov.
 ![Motivation Viewpoint Diagram!](https://bitbucket.org/st10-st18-st34-lendify/repo_sthdf_2024-2025/raw/c644a032ff23172bed4f07b7054a536e6e327783/model/images/Motivation%20Viewpoint.png "Motivation Viewpoint Diagram")
 
-Product Viewpoint:
+##### Product Viewpoint:
 Zobrazuje proces zápožičky produktu v systéme od jeho zalistovania cez vytvorenie požiadavky na výpožičku až po platbu a uzatvorenie zmluvy. Zachytáva interakciu medzi zákazníkom, aplikáciou a podpornými službami.
 ![Product Viewpoint Diagram!](https://bitbucket.org/st10-st18-st34-lendify/repo_sthdf_2024-2025/raw/c644a032ff23172bed4f07b7054a536e6e327783/model/images/Product%20Viewpoint.png "Product Viewpoint Diagram")
 
