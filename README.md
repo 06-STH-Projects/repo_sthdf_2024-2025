@@ -30,6 +30,8 @@ Motivácia pre vytvorenie meteorologickej stanice je hlavne spojená s efektívn
 
 Na záver sme si pripravili motivačný diagram, ktorý zhrnie naše ciele a motivácie do diagramovej podoby.
 
+![Motivation Diagram](ea_models/Motivation%20view.png)
+
 ## **Komponenty projektu:**
 
 - 3D tlačený kryt: Prispôsobiteľné puzdrá odolné voči fyzickému poškodeniu a počítač Raspberry Pi, navrhnuté tak, aby odolali podmienkam vonkajšieho prostredia.
@@ -51,6 +53,8 @@ Meteorologická stanica bude generovať cenné údaje o prostredí, ktoré môž
 - Optimalizácia nákladov na energie: V neposlednom rade je pre používateľov zariadenie, ktoré dokáže optimalizovať náklady veľmi atraktívnou voľbou. Aktívnym monitorovaním a automatizáciou prostredníctvom aplikácie Home Assistant dokáže modulárna meteorologická stanica optimalizovať náklady na vykurovanie, resp. ochladzovanie na základe udržiavania teploty v intervaloch, ktoré zamedzia potrebe akútnej úpravy teploty alebo vlhkosti prostredia.
 
 ## **Uce Case diagram a Business Process diagram**
+
+![Use Case Diagram](ea_models/Use%20Case.png)
 
 Kroky pre jednotlivé prípady použitia:
 
@@ -85,9 +89,7 @@ Kroky pre jednotlivé prípady použitia:
 
 Na lepšie porozumenie komunikácie meteorologickej stanice, používateľa a aplikáciou Home Assistant sme pripravili Business process view diagram, ktorý vizualizuje procesy od momentu monitorovania prostredia - získaniu údajov - odoslanie do systému až po zmenu prostredia.
 
-
-
-
+![Business Process View Diagram](ea_models/Business%20process%20view.png)
 
 ## **Technická špecifikácia**
 
@@ -111,7 +113,11 @@ Komponenty, z ktorých je implementovaná samotná meteorologická stanica:
 - Breadboard - slúži na prepojenie senzorov s Raspberry Pi
 - Ochranný obal
 
-Na základe komponent diagrau sme implementovali aj v reálnej podobe prototyp meteorologickej stanice:
+![Component View Diagram](ea_models/Component%20view.png)
+
+Na základe komponent diagramu sme implementovali aj v reálnej podobe prototyp meteorologickej stanice:
+
+![Zapojenie](ha_photos/zapojenie.jpg)
 
 Naľavo je možné vidieť Raspberry Pi v ochrannom obale a napravo zapojený senzor DHT11 senzor vlhkosti a teploty na Breadboard experimentálnej doske
 
@@ -119,8 +125,13 @@ Naľavo je možné vidieť Raspberry Pi v ochrannom obale a napravo zapojený se
 
 Po zapojení Raspberry a potrebných komponentov sme sa rozhodli navrhnúť a vytlačiť ochranný obal pre meteorologickú stanicu.
 
+![3D Model](model/model_03.png)
+
 Namodelovali sme obal, ktorý sa skladá z 2 častí. V jednej časti bude uložené Raspberry a v druhej Breadboard so senzormi. Takisto sme zabezpečili ventilačné otvory, ktoré umožnia cirkuláciu vzduchu, čím zabránime prehriatiu. Na boku su vedené otvory na pripojenie cez port.
 Výsledný vytlačený obal s uloženými komponentami:
+
+![MeteoStanica1](ha_photos/skrinka1.jpg)
+![MeteoStanica2](ha_photos/skrinka2.jpg)
 
 ## **Home Assistant aplikácia**
 
@@ -145,8 +156,11 @@ Po nainštalovaní naštartujeme docker cez príkaz “docker compose up -d” a
 
 Grafické rozhranie pre aplikáciu vyzerá nasledovne:
 
+![Home Assistant aplikácia](ha_photos/ha_photo.png)
+
 Takisto aplikácia loguje všetky správy, ktoré vyzerajú nasledovne:
 
 [2025-01-11 14:48:37] LOG: Message `{"temperature": 23.8, "humidity": 91}` sent to topic `home/sensor/weather_station`
+
 [2025-01-14 07:41:30] LOG: Message `{"temperature": 28.12, "humidity": 44.55, "air_quality": 13, "tvoc": 418.92, "eco2": 823.76}` sent to topic `home/sensor/weather_station`
 
