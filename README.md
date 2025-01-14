@@ -124,6 +124,8 @@ Naľavo je možné vidieť Raspberry Pi v ochrannom obale a napravo zapojený se
 
 Čo sa týka priamo implementačnej časti, je naimplementovaný daemon na čítanie dát zo senzorov dht11 + ens160, ktorý zapisuje dáta do súborov a zároveň ovláda LED indikátor. Je implementovaný aj dashboard , ktorý číta dáta zo súborov a na princípe API ich ďalej posiela na frontend. Je naimplementovaný ďalší daemon, ktorý číta dáta zo súborov a tie sú následne zasielané do aplikácie Home Assistant.
 
+![Dashboard Frontend](ha_photos/dashboard.png)
+
 ## ** 3D Tlačiareň a obal pre meteorologickú stanicu**
 
 Po zapojení Raspberry a potrebných komponentov sme sa rozhodli navrhnúť a vytlačiť ochranný obal pre meteorologickú stanicu.
