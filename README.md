@@ -1,5 +1,4 @@
-**Meteorologická stanica**
-
+# Meteorologická stanica
 **Systémové Myslenie v IT**
 
 Bc. Christian Danižek, Bc. Patrik Malina, Bc. Ondrej Lesák, Bc. Dávid Kováľ
@@ -103,6 +102,10 @@ Technická špecifikácia a upresnenie komponentov využitých na implementáciu
 - DFRobot Fermion ENS160
 - Tlačiareň Prusa Mk4
 
+Pre lepšie znázornenie a pre lepší prehľad máme Technology Diagram, kde sú komponenty a technológie, ktoré využívame, vrátane ich prepojení a spôsob ich "spolupráce".
+
+![Technology Diagram](ea_models/Technology%20view.png)
+
 ## **Meteorologická stanica**
 
 Komponenty, z ktorých je implementovaná samotná meteorologická stanica:
@@ -166,8 +169,13 @@ Grafické rozhranie pre aplikáciu vyzerá nasledovne:
 ![Home Assistant aplikácia](ha_photos/ha_photo.png)
 
 Takisto aplikácia loguje všetky správy, ktoré vyzerajú nasledovne:
+```
 
-[2025-01-11 14:48:37] LOG: Message `{"temperature": 23.8, "humidity": 91}` sent to topic `home/sensor/weather_station`
+[2025-01-11 14:49:01] LOG: Message `{"temperature": 26.5, "humidity": 87}` sent to topic `home/sensor/weather_station`
+[2025-01-11 14:49:04] LOG: Message `{"temperature": 25.4, "humidity": 67}` sent to topic `home/sensor/weather_station`
+[2025-01-11 14:49:07] LOG: Message `{"temperature": 27.6, "humidity": 78}` sent to topic `home/sensor/weather_station`
+[2025-01-14 07:41:21] LOG: Message `{"temperature": 24.86, "humidity": 46.47, "air_quality": 439, "tvoc": 1396.26, "eco2": 939.03}` sent to topic `home/sensor/weather_station`
+[2025-01-14 07:41:24] LOG: Message `{"temperature": 27.78, "humidity": 54.01, "air_quality": 447, "tvoc": 1130.53, "eco2": 814.89}` sent to topic `home/sensor/weather_station`
+[2025-01-14 07:41:27] LOG: Message `{"temperature": 26.71, "humidity": 28.82, "air_quality": 163, "tvoc": 931.48, "eco2": 461.16}` sent to topic `home/sensor/weather_station`
 
-[2025-01-14 07:41:30] LOG: Message `{"temperature": 28.12, "humidity": 44.55, "air_quality": 13, "tvoc": 418.92, "eco2": 823.76}` sent to topic `home/sensor/weather_station`
-
+```
