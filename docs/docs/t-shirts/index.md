@@ -29,4 +29,10 @@ Ponuku tričiek sme zatiaľ sprístupnili iba v našom firemnom chate, napriek t
 
 Plánujeme rozšíriť ponuku aj mimo firemného prostredia, pravdepodobne pomocou socíalnych sieti.
 
-![Use Case Diagram](images/real_solid.png)
+![solid tricko](images/solid_tricko.png)
+![gitlab tricko](images/gitlab_tricko.png)
+
+
+Prvý spokojný zakazník.
+
+![gitlab tricko](images/linda.jpeg)
