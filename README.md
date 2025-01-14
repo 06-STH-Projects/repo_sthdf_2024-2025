@@ -93,7 +93,7 @@ Na lepšie porozumenie komunikácie meteorologickej stanice, používateľa a ap
 
 ## **Technická špecifikácia**
 
-Technická špecifikácia využitá na implementáciu:
+Technická špecifikácia a upresnenie komponentov využitých na implementáciu:
 
 - Python
 - C++
@@ -101,6 +101,7 @@ Technická špecifikácia využitá na implementáciu:
 - Raspberry Pi 2B
 - DHT11 senzor vlhkosti a teploty
 - DFRobot Fermion ENS160
+- Tlačiareň Prusa Mk4
 
 ## **Meteorologická stanica**
 
@@ -119,11 +120,15 @@ Na základe komponent diagramu sme implementovali aj v reálnej podobe prototyp 
 
 ![Zapojenie](ha_photos/zapojenie.jpg)
 
-Naľavo je možné vidieť Raspberry Pi v ochrannom obale a napravo zapojený senzor DHT11 senzor vlhkosti a teploty na Breadboard experimentálnej doske
+Naľavo je možné vidieť Raspberry Pi v ochrannom obale a napravo zapojený senzor DHT11 senzor vlhkosti a teploty na Breadboard experimentálnej doske.
+
+Čo sa týka priamo implementačnej časti, je naimplementovaný daemon na čítanie dát zo senzorov dht11 + ens160, ktorý zapisuje dáta do súborov a zároveň ovláda LED indikátor. Je implementovaný aj dashboard , ktorý číta dáta zo súborov a na princípe API ich ďalej posiela na frontend. Je naimplementovaný ďalší daemon, ktorý číta dáta zo súborov a tie sú následne zasielané do aplikácie Home Assistant.
 
 ## ** 3D Tlačiareň a obal pre meteorologickú stanicu**
 
 Po zapojení Raspberry a potrebných komponentov sme sa rozhodli navrhnúť a vytlačiť ochranný obal pre meteorologickú stanicu.
+
+Model je vytvorený z materiálu PETG, ktorý je mimoriadne odolný a silný, je rezistentný proti vode, kvapalinám, čím je vhodný do rôznych prostredí či už vnútri alebo vonku. Dokáže zvládnuť až teplotu do 70-80 stupňov Celzia. 
 
 ![3D Model](model/model_03.png)
 
