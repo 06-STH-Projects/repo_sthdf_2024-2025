@@ -2,6 +2,7 @@
 # **InteligentnyKvetinac: Samozavlažovací a samonasvecovací kvetináč**
 *Autor: Katarína Beňovská*
 
+![](Zdroje/logoKvetinac.png)
 
 **Cieľ projektu:**
 
