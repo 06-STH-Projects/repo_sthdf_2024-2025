@@ -1,6 +1,10 @@
 # Meteorologická stanica
 **Systémové Myslenie v IT**
 
+<img src="./model/metostation_ai_cover.png" />
+<small>Cover image generated with use of DALLE-2</small>
+
+---
 Bc. Christian Danižek, Bc. Patrik Malina, Bc. Ondrej Lesák, Bc. Dávid Kováľ
 
 Slovenská technická univerzita v Bratislave
