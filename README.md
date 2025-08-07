@@ -1,7 +1,9 @@
 # 📘 System Thinking in IT – 2024/2025
 Link to bitbucket repository
 https://bitbucket.org/systemthinking-in-it/repo_sthdf_2024-2025/wiki/Home
-We are moving our ecosystem to GitHUB
+https://bitbucket.org/systemthinking-in-it/repo_sthdf_2024-2025/wiki/Projects-2024-2025.md
+We are moving our ecosystem to GitHUB.
+
 
 
 Tento projekt slúži ako **praktická ukážka rôznych spôsobov dokumentovania a publikovania výstupov** z Git repozitára.  
